@@ -1,0 +1,3249 @@
+
+
+<!DOCTYPE html >
+<html>
+<head id="Head1"><title>
+	National Institute of Technology Agartala
+</title><link rel="icon" type="image/x-icon" href="../IMAGES/logo_bw.bmp" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <!-- Bootstrap 3.3.6 -->
+    
+        <!-- Bootstrap 3.3.6 -->
+        <!-- i added the link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <!-- ends here -->
+        
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        
+        <link href="../Plugin/feedback/css/feedback.css" rel="stylesheet" />
+        
+        <link href="../CSS/notification.css" rel="stylesheet" />
+        
+        <link href="../bootstrap/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <!-- Theme style -->
+        
+        <link href="../dist/css/AdminLTE.min.css" rel="stylesheet" />
+        <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+        
+        
+        
+        <link href="../bootstrap/css/customcss.css" rel="stylesheet" />
+        
+        
+
+        <link href="../CSS/features.css" rel="stylesheet" />
+        <!--Designed and Modified by Amit Bhumbur-->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        
+        
+        
+        <link href="../newbootstrap/css/todo.css" rel="stylesheet" />
+        
+
+        <link href="../Multiselect/sumoselect.css" rel="stylesheet" />
+        
+    
+        <!-- jQuery UI 1.11.4 -->
+        
+        <!-- jQuery 2.2.0 -->
+        
+        <script src="../plugins/jQuery/jQuery-2.2.0.min.js"></script>
+        <!-- Bootstrap 3.3.6 -->
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <!-- SlimScroll -->
+        
+        <!-- FastClick -->
+        
+        <!-- FLOT CHARTS -->
+        <script src="../plugins/flot/jquery.flot.min.js"></script>
+        <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+        <script src="../plugins/flot/jquery.flot.resize.min.js"></script>
+        <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+        <script src="../plugins/flot/jquery.flot.pie.min.js"></script>
+        <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+        <script src="../plugins/flot/jquery.flot.categories.min.js"></script>
+        <script src="../dist/js/app.min.js"></script>
+
+        <script src="../Multiselect/jquery.sumoselect.min.js"></script>
+        
+    
+
+    
+
+    <script>
+        $(document).ready(function(){
+            $('.breadcrumb-menu').find('ul').addClass('breadcrumb');
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).on('shown.bs.dropdown', function () {
+            OffsetDropdown()
+
+            $(window).on('resize.bs.dropdown', function () {
+                OffsetDropdown()
+            })
+        })
+
+        $(document).on('hide.bs.dropdown', function () {
+            $(window).off('resize.bs.dropdown')
+        })
+
+        var OffsetDropdown = function () {
+            var dropdown = $('.open>.dropdown-menu')
+
+            if (dropdown.length == 0)
+                return
+
+            var rightOffset = dropdown.offset().left + dropdown.width()
+            var browserWidth = $('body').innerWidth()
+            var neededLeftOffset = dropdown.position().left - (rightOffset - browserWidth)
+
+            if (neededLeftOffset < 0) {
+                dropdown.css({ left: neededLeftOffset - 3 })
+            } else {
+                dropdown.css({ left: 0 })
+            }
+        }
+    </script>
+    <script type="text/javascript" language="JavaScript">
+
+        function myJS(myVar) {
+            window.alert(myVar);
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function CheckAlphabet(event, obj) {
+
+            var k = (window.event) ? event.keyCode : event.which;
+            if (k == 8 || k == 9 || k == 43 || k == 95 || k == 0 || k == 32 || k == 46) {
+                obj.style.backgroundColor = "White";
+                return true;
+
+            }
+            if (k >= 65 && k <= 90 || k >= 97 && k <= 122) {
+                obj.style.backgroundColor = "White";
+                return true;
+
+            }
+            else {
+                alert('Please Enter Alphabets Only!');
+                obj.focus();
+            }
+            return false;
+        }
+
+
+        function CheckNumeric(event, obj) {
+            var k = (window.event) ? event.keyCode : event.which;
+            //alert(k);
+            if (k == 8 || k == 9 || k == 43 || k == 95 || k == 0) {
+                obj.style.backgroundColor = "White";
+                return true;
+            }
+            if (k > 45 && k < 58) {
+                obj.style.backgroundColor = "White";
+                return true;
+
+            }
+            else {
+                alert('Please Enter numeric Value');
+                obj.focus();
+            }
+            return false;
+        }
+
+        function CheckAlphaNumeric(event, obj) {
+
+            var k = (window.event) ? event.keyCode : event.which;
+
+            // alert(k);
+
+            if (k == 8 || k == 9 || k == 16 || k == 0 || k == 32 || k == 45) {
+                obj.style.backgroundColor = "White";
+                return true;
+
+            }
+            if (k > 45 && k < 58 || k > 95 && k < 106 || k > 64 && k < 91 || k > 96 && k < 123) {
+                obj.style.backgroundColor = "White";
+                return true;
+
+            }
+            else {
+                alert('Please Enter Alphabets & Numbers Only!');
+                obj.focus();
+            }
+            return false;
+        }
+    </script>
+    
+    <style type="text/css">
+        /*.content-wrapper {
+           
+            min-height: 100%;
+        }
+
+        #ctl00_ContentPlaceHolder1_ceDateOfAdmission_popupDiv {
+            z-index: 10;
+        }
+
+        .bg-light-white {
+            background-color: black;
+            opacity: 0.5;
+        }
+
+        input:hover {
+            -moz-border-bottom-colors: none;
+            -moz-border-image: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;*/
+        /*border-color: #A0A0A0 #B9B9B9 #B9B9B9;
+            border-right: 1px solid #B9B9B9;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;*/
+        /*}
+
+
+        .visibleDiv, #topLeft, #topRight, #bottomLeft, #bottomRight {
+            position: fixed;
+            width: 280px;
+            border: solid 1px #e1e1b1;
+            vertical-align: middle;
+            background: #ffdab9;
+            text-align: center;
+        }
+
+        #topLeft {
+            top: 10px;
+            left: 10px;
+        }
+
+        #topRight {
+            top: 10px;
+            right: 10px;
+        }
+
+        #bottomLeft {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        #bottomRight {
+            bottom: 0px;
+            right: 0px;
+        }
+
+        #ctl00_ContentPlaceHolder1_rbl1UGPG_1 {
+            margin-left: 16px;
+        }
+
+
+        #ContentPlaceHolder1_ceEffectiveDate_popupDiv {
+            z-index: 100;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtDOB {
+            z-index: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtExamDate {
+            z-index: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtEndDate {
+            z-index: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtFromDate {
+            z-index: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtEventDate {
+            z-index: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtToDate {
+            z-index: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtDateOfBirth {
+            z-index: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_txtReceiptDate {
+            z-index: 0;
+        }*/
+        /*#ContentPlaceHolder1_ceExpDate_popupDiv {
+            z-index:100;
+             }
+           
+        #ctl00_ContentPlaceHolder1_ceFromdate_popupDiv {
+            z-index:100;
+        }
+
+           #ctl00_ContentPlaceHolder1_ceToDate_popupDiv {
+             z-index:100;
+         }
+             
+            #ctl00_ContentPlaceHolder1_ceStartDate_popupDiv,#ctl00_ContentPlaceHolder1_CalendarExtender2_popupDiv {
+            z-index:100;
+        }*/
+
+        /*.ajax__calendar, .ajax__calendar_container {
+            z-index: 100;
+        }
+
+        .form-control {
+            z-index: -1;
+        }*/
+
+
+
+        /*.row1 {
+            padding-bottom: 10px;
+            padding-top: 10px;
+            background-color: #347fbe;
+            text-shadow: 1px 0px 5px #000000;
+            color: #fff;
+            margin-bottom: 0px;
+        }*/
+
+        /*.mobile-nav { display:none;  }
+
+
+        @media only screen and (max-width:768px) {
+            .desktop-nav {display:none; }
+            .mobile-nav { display:block;  }
+        }*/
+    </style>
+
+    
+    <script>
+        $(document).ready(function () {
+            $(".toggle-password").click(function () {
+
+                $(this).toggleClass("fa-eye fa-eye-slash");
+                var input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+        });
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('body').on('focus', '.live-search-box', function () {
+                //   $(this).addClass('width210');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('.jj #mainMenu ul li').css({ 'display': 'none' });
+            $('.live-search-list #mainMenu').clone().appendTo('.jj');
+
+            $('.jj #mainMenu').find('li').each(function () {
+                $(this).attr('data-search-term', $(this).text().toLowerCase());
+            });
+
+            $('body').on('keyup', '.live-search-box', function () {
+                var searchTerm = $(this).val().toLowerCase();
+                $('.jj').find('li').each(function () {
+
+                    if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                        $(this).fadeIn();
+                        $('.not-found-txt').css({ 'display': 'block !important' });
+                    } else {
+                        $(this).fadeOut();
+                        $('.not-found-txt').css({ 'display': 'none !important' });
+                    }
+                    return 0;
+                });
+
+                if ($('.live-search-box').val() == '') {
+                    $('.live-search-area').hide();
+                    $(this).removeClass('width210');
+                    $('.cross-btn').fadeOut();
+
+                } else {
+                    $('.live-search-area').show();
+                    $(this).addClass('width210');
+                    $('.cross-btn').fadeIn();
+                }
+            });
+
+            $(".navbar-toggle").click(function () {
+                $(".live-search-box").fadeToggle();
+                $('.cross-btn, .live-search-area').fadeOut();
+            });
+
+            $('body').on('click', '.cross-btn', function () {
+                $('.search-box .live-search-area').hide();
+                $('.live-search-box').val('');
+                $('.live-search-box').removeClass('width210');
+                $('.cross-btn').fadeOut();
+            });
+        });
+
+    </script>
+    
+    
+
+    <script type="text/javascript">
+        //$(window).on("load", function () {
+        //    $("#preloader").hide();
+        //});
+
+        (function ($) {
+            var browserWindow = $(window);
+            // :: 1.0 Preloader Active Code
+            browserWindow.on('load', function () {
+                $('#preloader').hide();
+            });
+        })(jQuery);
+    </script>
+    
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BHB4T1Q68"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9BHB4T1Q68');
+</script>
+
+<link href="../App_Themes/Theme1/Theme1.css" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=Lev_ld1QZjKWjqn76JutvXgymoO-n3dHRyoxn50r75W7YvEP35FOF0UO9T3y8HJEMl3b_l0dAC2jj7-VXWluAbA4_rEbMaDwqaRdKg1q805OfbUdCrinKszQzuHJvQwaA_cnxnqWuNl0YErr_MpgqzTElAAl7-G5jpLhkZJrBKE1&amp;t=637214312226252697" type="text/css" rel="stylesheet" /></head>
+<script>
+    $(document).ready(function () {
+
+        /*********REPORT COLLECTION START******************/
+        //////////////////---------------ACADEMIC ------------------------////////////////
+        $.ajax({
+            type: "POST",
+            url: '/DashboardWebmethods.aspx/ShowRCAcademic',
+             data: '{}',
+             contentType: "application/json; charset=utf-8",
+             dataType: "json",
+             success: OnSuccessAcad,
+             failure: function (response) {
+             }
+         });
+         function OnSuccessAcad(response) {
+             loadAcad(response['d']);
+
+
+         };
+
+         function loadAcad(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulAcademic').append(html);
+             if (LinkCount > 1) {
+                 $('#dvAcademic').show();
+             }
+         }
+
+
+         //////////////////--------------- EXAMINATION ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCExamination',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessExam,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessExam(response) {
+             loadExam(response['d']);
+
+
+         };
+
+         function loadExam(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulExamination').append(html);
+             if (LinkCount > 1) {
+                 $('#dvExamination').show();
+             }
+         }
+
+         //////////////////--------------- HOSTEL ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCHostel',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessHostel,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessHostel(response) {
+             loadHostel(response['d']);
+
+
+         };
+
+         function loadHostel(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulHostel').append(html);
+             if (LinkCount > 1) {
+                 $('#dvHostel').show();
+             }
+         }
+
+         //////////////////--------------- TNP ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCTNP',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessTnP,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessTnP(response) {
+             loadTnP(response['d']);
+
+
+         };
+
+         function loadTnP(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulTnP').append(html);
+             if (LinkCount > 1) {
+                 $('#dvTnP').show();
+             }
+         }
+
+         //////////////////--------------- ELEARNING ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCElearning',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessElearning,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessElearning(response) {
+             loadElearning(response['d']);
+
+
+         };
+
+         function loadElearning(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulElearning').append(html);
+             if (LinkCount > 1) {
+                 $('#dvElearning').show();
+             }
+         }
+
+         //////////////////--------------- PAYROLL ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCPayroll',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessPayroll,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessPayroll(response) {
+             loadPayroll(response['d']);
+
+
+         };
+
+         function loadPayroll(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulPayroll').append(html);
+             if (LinkCount > 1) {
+                 $('#dvPayroll').show();
+             }
+         }
+
+         //////////////////--------------- ESTABLISHMENT ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCEstablish',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessEstablish,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessEstablish(response) {
+             loadEstablish(response['d']);
+
+
+         };
+
+         function loadEstablish(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulEstablishment').append(html);
+             if (LinkCount > 1) {
+                 $('#dvEstablishment').show();
+             }
+         }
+
+         //////////////////--------------- STORES ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCStores',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessStores,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessStores(response) {
+             loadStores(response['d']);
+
+
+         };
+
+         function loadStores(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulStores').append(html);
+             if (LinkCount > 1) {
+                 $('#dvStores').show();
+             }
+         }
+
+         //////////////////--------------- ADMINISTRATION ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCAdministration',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessAdministration,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessAdministration(response) {
+             loadAdministration(response['d']);
+
+
+         };
+
+         function loadAdministration(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulAdministration').append(html);
+             if (LinkCount > 1) {
+                 $('#dvAdministration').show();
+             }
+         }
+
+         //////////////////--------------- FINANCE ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCFinance',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessFinance,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessFinance(response) {
+             loadFinance(response['d']);
+
+
+         };
+
+         function loadFinance(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulFinance').append(html);
+             if (LinkCount > 1) {
+                 $('#dvFinance').show();
+             }
+         }
+
+         //////////////////--------------- LIBRARY ------------------------////////////////
+         $.ajax({
+             type: "POST",
+             url: '/DashboardWebmethods.aspx/ShowRCLibrary',
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessLibrary,
+                failure: function (response) {
+                }
+            });
+         function OnSuccessLibrary(response) {
+             loadLibrary(response['d']);
+
+
+         };
+
+         function loadLibrary(data) {
+             var html = '';
+             var LinkCount = 1;
+             if (data != null) {
+                 if (data.length > 0) {
+                     $.each(data, function (row, item) {
+
+                         html += '<li class="list-group-item"><a href="../'%20+%20item.Link%20+%20'?pageno=' + item.PageNo + '" target="_blank"><i class="fa fa-dot-circle-o"></i>' + item.LinkName + '</a></li>';
+                         LinkCount += 1;
+                     });
+                 } else {
+                     html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+                 }
+             } else {
+                 html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No records to display..</li>';
+             }
+             $('#ulLibrary').append(html);
+             if (LinkCount > 1) {
+                 $('#dvLibrary').show();
+             }
+         }
+
+         /*********REPORT COLLECTION END***************/
+
+     });
+
+        //***************TO DO LIST CALL ON ACTION*************************//
+
+   
+
+
+   
+        //***************TO DO LIST CALL ON ACTION END*************************//
+
+</script>
+<script>
+    /******************TODO LIST START ON LOAD************************/
+
+    
+
+    $(document).ready(function () {
+        /******************TODO LIST START ON LOAD************************/
+      
+        BindTodoData();
+
+        //$('.btnAdd').click(function () {
+        //$('.btnAdd').click(function () {
+        $(document).on('click', '#I1', function () {
+          
+            debugger;
+           
+            if ($('#Text1').val().trim() == "") {
+                //alert("Please Enter To Do");
+                //alert('pankaj');
+                $('#Text1').focus();
+                $('#Text1').css('border-color', 'red');
+                //return;
+            }
+            else {
+                //alert('pankaj1');
+                var todolist = $('#Text1').val().trim();
+                var formdata = {
+                    Todo: todolist
+                };              
+                SaveToDoData(formdata);             
+            }
+        });
+
+        var SaveToDoData = function (formdata) {
+            //alert('pankaj33');
+            $.ajax({
+
+                url: '/homeFaculty.aspx/SaveTodoList',
+                type: "POST",
+                data: JSON.stringify(formdata),
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $('#Text1').val("");
+                    $('#Text1').css('border-color', '');
+                    //alert('pankaj');
+                    BindTodoData();
+                    //alert('pankaj1');
+                },
+                error: function (errResponse) {
+                    console.log(errResponse);
+                    BindTodoData();
+                }
+            });
+        };
+        //***************TO DO LIST END ON LOAD*************************//
+
+
+
+
+
+
+    });
+
+    //***************TO DO LIST CALL ON ACTION*************************//
+
+    var BindTodoData = function () {
+        debugger;
+        //alert('hii');
+        $.ajax({
+            type: "POST",
+            url: '/homeFaculty.aspx/ShowTodo',
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: OnSuccessTodo,
+            failure: function (response) {
+            }
+        });
+
+        function OnSuccessTodo(response) {
+            LoadToDoData(response['d']);
+        };
+
+        function LoadToDoData(data) {
+            var html = '';
+            var LinkCount = 0;
+            if (data != null) {
+                if (data.length > 0) {
+                    $.each(data, function (row, item) {
+
+                        html += '<li class="todo__item"><label for="todo-1"><span class="check__box"><i class="fa fa-check check__pointer"></i></span><span class="item__title">' + item.TODO + '</span> </label><i class="fa fa-trash-o item__trash-can" title="Delete" onclick="return UpdateData(' + item.SRNO + ')"></i></li>';
+                        LinkCount += 1;
+                    });
+                } else {
+                    html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No To-do available</li>';
+                }
+            } else {
+                html += '<li class="list-group-item text-center" style="font-size:15px; font-weigth:bold; background-color: #d9edf7; ">No To-do available</li>';
+            }
+            $('#UL1').html(html);
+            $('#Label2').html('(' + LinkCount + ')');
+        }
+    }
+
+
+    function UpdateData(id) {
+
+        var resp = confirm("Are you sure want to delete?")
+        if (resp == true) {
+            var Obj = {};
+            Obj.id = id;
+
+            $.ajax({
+                url: '/homeFaculty.aspx/UpdateTodo',
+                   type: "POST",
+                   data: JSON.stringify(Obj),
+                   contentType: "application/json;charset=utf-8",
+                   dataType: "json",
+                   success: function (data) {
+                       $('#Text1').val("");
+                       $('#Text1').css('border-color', '');
+                       BindTodoData();
+
+                   },
+                   error: function (errResponse) {
+                       console.log(errResponse);
+                       BindTodoData();
+                   }
+               });
+           }
+       }
+       //***************TO DO LIST CALL ON ACTION END*************************//
+</script>
+<body class="hold-transition skin-blue layout-top-nav">
+    
+    <script src="../Plugin/feedback/js/freshwidget.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.freshwidget-container').css({ 'display': 'block' });
+            $('body').on('click', '#minimize-div', function () {
+                $('.freshwidget-container').hide();
+                $('#minimized-div').show();
+                $('#freshwidget-button').addClass('inactive');
+            });
+            $('body').on('click', '#minimized-div', function () {
+                $('.freshwidget-container').show();
+            });
+            $('body').on('click', '.widget-close', function () {
+                $('#minimized-div').hide();
+                $('#freshwidget-button').removeClass('inactive');
+            });
+                
+        });
+    </script>
+
+    
+    
+    <form method="post" action="./iitmsKfHo+OSO6nsnFDZTEzzwRLgYitvnpo7dDYyx3YzuRApQriOefQT5Bxctuk2BMJHW?pageno=1067" onsubmit="javascript:return WebForm_OnSubmit();" id="frmMaster" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="ToolkitScriptManager1_HiddenField" id="ToolkitScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNjg3ODEyNjc2DxYSHgVSZWdubwUIMjFVQ1MwOTQeE1ZhbGlkYXRlUmVxdWVzdE1vZGUCAR4Hc2Vzc2lvbgUCMTMeC0NhcHBpbmdkYXlzBQE1HglpcEFkZHJlc3MFDTQ5LjM4LjIzNC4xMTUeCGhvc3RlbG5vBQE3HghEZWdyZWVubwUBMR4EaWRubwUFMTQzMjQeBlJvbGxubwUHMjExNDMyNBYCZg9kFgICDA8WAh4HZW5jdHlwZQUTbXVsdGlwYXJ0L2Zvcm0tZGF0YRYaAgMPPCsADQEMFCsABwUXMDowLDA6MSwwOjIsMDozLDA6NCwwOjUUKwACFgQeBFRleHQFDk9OTElORSBQQVlNRU5UHgtOYXZpZ2F0ZVVybAUBIxQrAAIFAzA6MBQrAAIWBB8KBQlTQkkgRSBQQVkfCwUBIxQrAAMFBzA6MCwwOjEUKwACFgQfCgUPUGF5IFR1aXRpb24gRmVlHwsFI09QRy9SZXF1ZXN0UGF5bWVudC5hc3B4P3BhZ2Vubz0xMTAyZBQrAAIWBB8KBRhDb21tb24gUGF5bWVudCBJbnRlcmZhY2UfCwUib3BnL0NvbW1vblBheW1lbnQuYXNweD9wYWdlbm89MTE3OWQUKwACFgQfCgUIQUNBREVNSUMfCwUBIxQrAAgFGzA6MCwwOjEsMDoyLDA6MywwOjQsMDo1LDA6NhQrAAIWBB8KBQtUcmFuc2FjdGlvbh8LBQEjFCsAAwUHMDowLDA6MRQrAAIWBB8KBRVJbnRlcm5hbCBTbGlkaW5nIGZvcm0fCwUqQUNBREVNSUMvQnJhbmNoU2xpZGluZ2Zvcm0uYXNweD9wYWdlbm89OTIzZBQrAAIWBB8KBRBBZGQgQmFuayBEZXRhaWxzHwsFLEFDQURFTUlDL1N0dWRlbnRCYW5rRGV0YWlscy5hc3B4P3BhZ2Vubz0xMDc5ZBQrAAIWBB8KBQdSZXBvcnRzHwsFByNub2xpbmsUKwADBQcwOjAsMDoxFCsAAhYEHwoFFER1cGxpY2F0ZSBBZG1pdCBDYXJkHwsFNmFjYWRlbWljL3JlcG9ydHMvZHVwbGljYXRlX2FkbWl0X2NhcmQuYXNweD9wYWdlbm89MTE4OGQUKwACFgQfCgUPUGF5bWVudCBSZWNlaXB0HwsFMGFjYWRlbWljL3JlcG9ydHMvcGF5bWVudHJlY2VpcHQuYXNweD9wYWdlbm89MTI2MGQUKwACFgQfCgUJQWRtaXNzaW9uHwsFByNub2xpbmsUKwAEBQswOjAsMDoxLDA6MhQrAAIWBB8KBRJVcGRhdGUgSW5mb3JtYXRpb24fCwUhVXBkYXRlU3R1ZGVudEluZm8uYXNweD9wYWdlbm89NjUwZBQrAAIWBB8KBShBdHRlbmRhbmNlICYgQ291cnNlUmVnaXN0cmF0aW9uICBEZXRhaWxzHwsFNEFDQURFTUlDL0NvbXByZWhlbnNpdmVfU3R1ZF9SZXBvcnQxLmFzcHg/cGFnZW5vPTEwOTFkFCsAAhYEHwoFD1VwbG9hZCBEb2N1bWVudB8LBSRhY2FkZW1pYy91cGxvYWRfZG9jLmFzcHg/cGFnZW5vPTEyNjdkFCsAAhYEHwoFDFJlZ2lzdHJhdGlvbh8LBQcjbm9saW5rFCsABAULMDowLDA6MSwwOjIUKwACFgQfCgUVU2VtZXN0ZXIgUmVnaXN0cmF0aW9uHwsFLUFDQURFTUlDL1NlbWVzdGVyUmVnaXN0cmF0aW9uLmFzcHg/cGFnZW5vPTc2MmQUKwACFgQfCgUsQ3VycmVudCBTZXNzaW9uIFN1YmplY3QgUmVnaXN0cmF0aW9uIERldGFpbHMfCwUzQWNhZGVtaWMvU3ViamVjdFJlZ2lzdHJhdGlvbkRldGFpbHMuYXNweD9wYWdlbm89MjI5ZBQrAAIWBB8KBRRCYWNrbG9nIFJlZ2lzdHJhdGlvbh8LBSlBQ0FERU1JQy9FeGFtUmVnaXN0cmF0aW9uLmFzcHg/cGFnZW5vPTgzNWQUKwACFgQfCgULRXhhbWluYXRpb24fCwUHI25vbGluaxQrAAMFBzA6MCwwOjEUKwACFgQfCgUJTXkgUmVzdWx0HwsFL2FjYWRlbWljL2V4YW1pbmF0aW9uL3ZpZXdyZXN1bHQuYXNweD9wYWdlbm89ODE5ZBQrAAIWBB8KBRBQcmludCBBZG1pdCBDYXJkHwsFKkFDQURFTUlDL1N0dWRlbnRBZG1pdENhcmQuYXNweD9wYWdlbm89MTA0NWQUKwACFgQfCgUHTm8gRHVlcx8LBQcjbm9saW5rFCsAAwUHMDowLDA6MRQrAAIWBB8KBRNBcHBsaWNhdGlvbiBSZXF1ZXN0HwsFI25vZHVlcy9hcHBsaWNhdGlvbi5hc3B4P3BhZ2Vubz0xMjE3ZBQrAAIWBB8KBQlWaWV3IER1ZXMfCwUgbm9kdWVzL3ZpZXdkdWVzLmFzcHg/cGFnZW5vPTEyMThkFCsAAhYEHwoFF1N0dWRlbnQgRmVlZGJhY2sgQW5zd2VyHwsFK0FDQURFTUlDL1N0dWRlbnRGZWVkQmFja0Fucy5hc3B4P3BhZ2Vubz03NjhkFCsAAhYEHwoFBkhPU1RFTB8LBQEjFCsAAwUHMDowLDA6MRQrAAIWBB8KBQtUcmFuc2FjdGlvbh8LBQEjFCsABAULMDowLDA6MSwwOjIUKwACFgQfCgUVQ2FuY2VsIFJvb20gQWxsb3RtZW50HwsFN0hvc3RlbC9DYW5jZWxSb29tQWxsb3RtZW50LmFzcHg/U3R1ZGVudD1UcnVlJnBhZ2Vubz0yMTRkFCsAAhYEHwoFEUxlYXZlIEFwcGxpY2F0aW9uHwsFKEhPU1RFTC9MZWF2ZUFwcGxpY2F0aW9uLmFzcHg/cGFnZW5vPTEwNjdkFCsAAhYEHwoFGEF1dG9tYXRpYyBSb29tIEFsbG90bWVudB8LBS1IT1NURUwvU3R1ZEF1dG9Sb29tQWxsb3RtZW50LmFzcHg/cGFnZW5vPTEyODlkFCsAAhYEHwoFB1JlcG9ydHMfCwUHI25vbGluaxQrAAIFAzA6MBQrAAIWBB8KBRFNZXNzIEJpbGwgQmFsYW5jZR8LBS5IT1NURUwvUkVQT1JUL01lc3NCaWxsQmFsYW5jZS5hc3B4P3BhZ2Vubz0xMTc2ZBQrAAIWBB8KBQRJVExFHwsFASMUKwADBQcwOjAsMDoxFCsAAhYEHwoFDFRyYW5zYWN0aW9ucx8LBQEjFCsACAUbMDowLDA6MSwwOjIsMDozLDA6NCwwOjUsMDo2FCsAAhYEHwoFDVNlbGVjdCBDb3Vyc2UfCwUhSXRsZS9zZWxlY3RDb3Vyc2UuYXNweD9wYWdlbm89MTg4ZBQrAAIWBB8KBQdNZXNzYWdlHwsFHUl0bGUvTWFpbFBhZ2UuYXNweD9wYWdlbm89MjU0ZBQrAAIWBB8KBRROZXcgRGlzY3Vzc2lvbiBGb3J1bR8LBSxJdGxlL0l0bGVfTmV3RGlzY3Vzc2lvbkZvcnVtLmFzcHg/cGFnZW5vPTI4MWQUKwACFgQfCgUQRGlzY3Vzc2lvbiBGb3J1bR8LBR5JdGxlL1N0dWRGb3J1bS5hc3B4P3BhZ2Vubz04NjhkFCsAAhYEHwoFEVBlcnNvbmFsIENhbGVuZGFyHwsFJ0l0bGUvUGVyc29uYWxfQ2FsZW5kYXIuYXNweD9wYWdlbm89MTE1NGQUKwACFgQfCgUYU2VuZCBRdWVzdGlvbiBUbyBGYWN1bHR5HwsFOkl0bGUvSXRsZV9GcmVxdWVudGx5QXNrZWRRdWVzdGlvbnNfTWFzdGVyLmFzcHg/cGFnZW5vPTExNTlkFCsAAhYEHwoFElJlcXVlc3QgRm9yIFJlVGVzdB8LBTJJVExFL0l0bGVfUmVxdWVzdF9BbGxvd2luZ19SZXRlc3QuYXNweD9wYWdlbm89MTE2MWQUKwACFgQfCgUEVmlldx8LBQcjbm9saW5rFCsACQUfMDowLDA6MSwwOjIsMDozLDA6NCwwOjUsMDo2LDA6NxQrAAIWBB8KBRBBY2Nlc3MgZS1MaWJyYXJ5HwsFIEl0bGUvU3R1ZExpYnJhcnkuYXNweD9wYWdlbm89MjUzZBQrAAIWBB8KBRFWaWV3IFN0dWRlbnQgVGVzdB8LBR1JdGxlL1N0dWRUZXN0LmFzcHg/cGFnZW5vPTg3M2QUKwACFgQfCgUSU3R1ZGVudCBBc3NpZ25tZW50HwsFI0lUTEUvU3R1ZEFzc2lnbm1lbnQuYXNweD9wYWdlbm89MjQ3ZBQrAAIWBB8KBRRTdHVkZW50IEFubm91bmNlbWVudB8LBSVJVExFL1N0dWRBbm5vdW5jZW1lbnQuYXNweD9wYWdlbm89MjUxZBQrAAIWBB8KBQ1WaWV3IFN5bGxhYnVzHwsFJUl0bGUvU3R1ZFZpZXdTeWxsYWJ1cy5hc3B4P3BhZ2Vubz0yNjNkFCsAAhYEHwoFElZpZXcgTGVjdHVyZSBOb3Rlcx8LBR5JdGxlL1N0dWROb3Rlcy5hc3B4P3BhZ2Vubz04NzBkFCsAAhYEHwoFElZpZXcgVGVhY2hpbmcgUGxhbh8LBSJJdGxlL1N0dWRWaWV3VFBsYW4uYXNweD9wYWdlbm89MjU5ZBQrAAIWBB8KBRRWaXJ0dWFsIE5vdGljZSBCb2FyZB8LBTNJdGxlL0l0bGVfQW5ub3VuY2VtZW50X05vdGljZUJvYXJkLmFzcHg/cGFnZW5vPTExNjNkFCsAAhYEHwoFA1QmUB8LBQEjFCsAAgUDMDowFCsAAhYEHwoFDFRyYW5zYWN0aW9ucx8LBQEjFCsAAgUDMDowFCsAAhYEHwoFGUluUGxhbnQgVHJhaW5pbmcgUHJvcG9zYWwfCwVFVFJBSU5JTkdBTkRQTEFDRU1FTlRcVHJhbnNhY3Rpb25zXEluUGxhbnRUcmFpbmluZ1JlZzIuYXNweD9wYWdlbm89NzYxZBQrAAIWBB8KBQ5BRE1JTklTVFJBVElWRR8LBQEjFCsABAULMDowLDA6MSwwOjIUKwACFgQfCgUHU3RpcGVuZB8LBQEjFCsAAgUDMDowFCsAAhYGHwoFDFRyYW5zYWN0aW9ucx8LBQcjbm9saW5rHgZUYXJnZXQFBmZyYW1lMRQrAAIFAzA6MBQrAAIWBB8KBQ1BcHBseSBTdGlwZW5kHwsFJFNUSVBFTkQvQXBwbHlTdGlwZW5kLmFzcHg/cGFnZW5vPTgwMmQUKwACFgQfCgUhQ29tcGxhaW50IGFuZCBHcmlldmFuY2UtUmVkcmVzc2FsHwsFByNub2xpbmsUKwACBQMwOjAUKwACFgYfCgULVHJhbnNhY3Rpb24fCwUHI25vbGluax8MBQZmcmFtZTEUKwACBQMwOjAUKwACFgQfCgUuQ29tcGxhaW50IGFuZCBHcmlldmFuY2UtUmVkcmVzc2FsIFJlZ2lzdHJhdGlvbh8LBTFDb21wbGFpbnRzL1RSQU5TQUNUSU9OL2NvbXBsYWludC5hc3B4P3BhZ2Vubz0xMDUzZBQrAAIWBB8KBQZIZWFsdGgfCwUHI25vbGluaxQrAAIFAzA6MBQrAAIWBh8KBQdSZXBvcnRzHwsFByNub2xpbmsfDAUGZnJhbWUxFCsAAgUDMDowFCsAAhYEHwoFIkVtcCAvIFN0dWRlbnQgUHJlc2NyaXB0aW9uIERldGFpbHMfCwU1SGVhbHRoL1JlcG9ydC9FbXBQcmVzY3JpcHRpb25EZXRhaWxzLmFzcHg/cGFnZW5vPTExMjNkFoABZg9kFgJmDxUBDk9OTElORSBQQVlNRU5UZAIBD2QWAmYPFQEJU0JJIEUgUEFZZAICD2QWAmYPFQEPUGF5IFR1aXRpb24gRmVlZAIDD2QWAmYPFQEYQ29tbW9uIFBheW1lbnQgSW50ZXJmYWNlZAIED2QWAmYPFQEIQUNBREVNSUNkAgUPZBYCZg8VAQtUcmFuc2FjdGlvbmQCBg9kFgJmDxUBFUludGVybmFsIFNsaWRpbmcgZm9ybWQCBw9kFgJmDxUBEEFkZCBCYW5rIERldGFpbHNkAggPZBYCZg8VAQdSZXBvcnRzZAIJD2QWAmYPFQEURHVwbGljYXRlIEFkbWl0IENhcmRkAgoPZBYCZg8VAQ9QYXltZW50IFJlY2VpcHRkAgsPZBYCZg8VAQlBZG1pc3Npb25kAgwPZBYCZg8VARJVcGRhdGUgSW5mb3JtYXRpb25kAg0PZBYCZg8VAShBdHRlbmRhbmNlICYgQ291cnNlUmVnaXN0cmF0aW9uICBEZXRhaWxzZAIOD2QWAmYPFQEPVXBsb2FkIERvY3VtZW50ZAIPD2QWAmYPFQEMUmVnaXN0cmF0aW9uZAIQD2QWAmYPFQEVU2VtZXN0ZXIgUmVnaXN0cmF0aW9uZAIRD2QWAmYPFQEsQ3VycmVudCBTZXNzaW9uIFN1YmplY3QgUmVnaXN0cmF0aW9uIERldGFpbHNkAhIPZBYCZg8VARRCYWNrbG9nIFJlZ2lzdHJhdGlvbmQCEw9kFgJmDxUBC0V4YW1pbmF0aW9uZAIUD2QWAmYPFQEJTXkgUmVzdWx0ZAIVD2QWAmYPFQEQUHJpbnQgQWRtaXQgQ2FyZGQCFg9kFgJmDxUBB05vIER1ZXNkAhcPZBYCZg8VARNBcHBsaWNhdGlvbiBSZXF1ZXN0ZAIYD2QWAmYPFQEJVmlldyBEdWVzZAIZD2QWAmYPFQEXU3R1ZGVudCBGZWVkYmFjayBBbnN3ZXJkAhoPZBYCZg8VAQZIT1NURUxkAhsPZBYCZg8VAQtUcmFuc2FjdGlvbmQCHA9kFgJmDxUBFUNhbmNlbCBSb29tIEFsbG90bWVudGQCHQ9kFgJmDxUBEUxlYXZlIEFwcGxpY2F0aW9uZAIeD2QWAmYPFQEYQXV0b21hdGljIFJvb20gQWxsb3RtZW50ZAIfD2QWAmYPFQEHUmVwb3J0c2QCIA9kFgJmDxUBEU1lc3MgQmlsbCBCYWxhbmNlZAIhD2QWAmYPFQEESVRMRWQCIg9kFgJmDxUBDFRyYW5zYWN0aW9uc2QCIw9kFgJmDxUBDVNlbGVjdCBDb3Vyc2VkAiQPZBYCZg8VAQdNZXNzYWdlZAIlD2QWAmYPFQEUTmV3IERpc2N1c3Npb24gRm9ydW1kAiYPZBYCZg8VARBEaXNjdXNzaW9uIEZvcnVtZAInD2QWAmYPFQERUGVyc29uYWwgQ2FsZW5kYXJkAigPZBYCZg8VARhTZW5kIFF1ZXN0aW9uIFRvIEZhY3VsdHlkAikPZBYCZg8VARJSZXF1ZXN0IEZvciBSZVRlc3RkAioPZBYCZg8VAQRWaWV3ZAIrD2QWAmYPFQEQQWNjZXNzIGUtTGlicmFyeWQCLA9kFgJmDxUBEVZpZXcgU3R1ZGVudCBUZXN0ZAItD2QWAmYPFQESU3R1ZGVudCBBc3NpZ25tZW50ZAIuD2QWAmYPFQEUU3R1ZGVudCBBbm5vdW5jZW1lbnRkAi8PZBYCZg8VAQ1WaWV3IFN5bGxhYnVzZAIwD2QWAmYPFQESVmlldyBMZWN0dXJlIE5vdGVzZAIxD2QWAmYPFQESVmlldyBUZWFjaGluZyBQbGFuZAIyD2QWAmYPFQEUVmlydHVhbCBOb3RpY2UgQm9hcmRkAjMPZBYCZg8VAQNUJlBkAjQPZBYCZg8VAQxUcmFuc2FjdGlvbnNkAjUPZBYCZg8VARlJblBsYW50IFRyYWluaW5nIFByb3Bvc2FsZAI2D2QWAmYPFQEOQURNSU5JU1RSQVRJVkVkAjcPZBYCZg8VAQdTdGlwZW5kZAI4D2QWAmYPFQEMVHJhbnNhY3Rpb25zZAI5D2QWAmYPFQENQXBwbHkgU3RpcGVuZGQCOg9kFgJmDxUBIUNvbXBsYWludCBhbmQgR3JpZXZhbmNlLVJlZHJlc3NhbGQCOw9kFgJmDxUBC1RyYW5zYWN0aW9uZAI8D2QWAmYPFQEuQ29tcGxhaW50IGFuZCBHcmlldmFuY2UtUmVkcmVzc2FsIFJlZ2lzdHJhdGlvbmQCPQ9kFgJmDxUBBkhlYWx0aGQCPg9kFgJmDxUBB1JlcG9ydHNkAj8PZBYCZg8VASJFbXAgLyBTdHVkZW50IFByZXNjcmlwdGlvbiBEZXRhaWxzZAIEDw8WAh4ISW1hZ2VVcmwFJn4vc2hvd2ltYWdlLmFzcHg/aWQ9MTQzMjQmdHlwZT1TVFVERU5UZGQCBg8PFgIfDQUmfi9zaG93aW1hZ2UuYXNweD9pZD0xNDMyNCZ0eXBlPVNUVURFTlRkZAIIDw8WAh8KBRtXZWxjb21lLDxiciAvPktBVkkgS0hBTElRVUVkZAIJDxYCHgdWaXNpYmxlaGQCDA8PFgIfDmhkZAIRDxYCHw5nFgICAQ8WAh4EaHJlZgU8aHR0cHM6Ly9taXMubml0YS5hYy5pbi9taXMvVXBkYXRlU3R1ZGVudEluZm8uYXNweD9wYWdlbm89NjUwFgJmDxYCHglpbm5lcmh0bWwFElVwZGF0ZSBJbmZvcm1hdGlvbmQCEg8WAh8OZxYCAgEPFgIfDwVSaHR0cHM6Ly9taXMubml0YS5hYy5pbi9taXMvSG9zdGVsL0NhbmNlbFJvb21BbGxvdG1lbnQuYXNweD9TdHVkZW50PVRydWU/cGFnZW5vPTIxNBYCZg8WAh8QBRVDYW5jZWwgUm9vbSBBbGxvdG1lbnRkAhMPFgIfDmcWAgIBDxYCHw8FT2h0dHBzOi8vbWlzLm5pdGEuYWMuaW4vbWlzL0FDQURFTUlDL0NvbXByZWhlbnNpdmVfU3R1ZF9SZXBvcnQxLmFzcHg/cGFnZW5vPTEwOTEWAmYPFgIfEAUsQXR0ZW5kYW5jZSAmYW1wOyBDb3Vyc2VSZWdpc3RyYXRpb24gIERldGFpbHNkAhQPFgIfDmcWAgIBDxYCHw8FO2h0dHBzOi8vbWlzLm5pdGEuYWMuaW4vbWlzL25vZHVlcy92aWV3ZHVlcy5hc3B4P3BhZ2Vubz0xMjE4FgJmDxYCHxAFCVZpZXcgRHVlc2QCFQ8WAh8OZxYCAgEPFgIfDwU8aHR0cHM6Ly9taXMubml0YS5hYy5pbi9taXMvSXRsZS9zZWxlY3RDb3Vyc2UuYXNweD9wYWdlbm89MTg4FgJmDxYCHxAFDVNlbGVjdCBDb3Vyc2VkAh8PDxYCHwoFVzxTVFJPTkc+PHVsPjxsaT5IT1NURUw8L2xpPjxsaT5UcmFuc2FjdGlvbjwvbGk+PGxpPkxlYXZlIEFwcGxpY2F0aW9uPC9saT48L3VsPjwvU1RST05HPmRkAiAPZBYCAgMPZBYCZg9kFgQCAQ9kFh4CAQ8PFgIfCgUNS0FWSSBLSEFMSVFVRWRkAgMPDxYCHwoFGUNPTVBVVEVSIFNDICYgRU5HSU5FRVJJTkdkZAIFDw8WAh8KBQcyMDIxLTIyZGQCBw8PFgIfCgUCVklkZAIJDw8WBB8KBQpSIE4gVEFHT1JFHgdUb29sVGlwBQE3ZGQCCw8PFgQfCgUHQkxPQ0stNx8RBQIzMmRkAg0PDxYEHwoFBVItNTA5HxEFBDI2MjhkZAIPDw8WBB8KBS1NL1MgU1VHQU5ESElNIENBVEVSRVJTKEVBU1RFUk4gTUVTU19STlRBR09SRSkfEQUCMzJkZAIRDw8WAh4JTWF4TGVuZ3RoZmRkAhUPFhoeGUN1bHR1cmVEZWNpbWFsUGxhY2Vob2xkZXIFAS4eDklucHV0RGlyZWN0aW9uCymKAUFqYXhDb250cm9sVG9vbGtpdC5NYXNrZWRFZGl0SW5wdXREaXJlY3Rpb24sIEFqYXhDb250cm9sVG9vbGtpdCwgVmVyc2lvbj0zLjAuMjAyMjkuMjA4NDMsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MjhmMDFiMGU4NGI2ZDUzZQAeC0N1bHR1cmVOYW1lBQVlbi1HQh4gQ3VsdHVyZUN1cnJlbmN5U3ltYm9sUGxhY2Vob2xkZXIFAsKjHhZDdWx0dXJlVGltZVBsYWNlaG9sZGVyBQE6HgpBY2NlcHRBbVBtaB4bQ3VsdHVyZVRob3VzYW5kc1BsYWNlaG9sZGVyBQEsHhZDdWx0dXJlQU1QTVBsYWNlaG9sZGVyBQVBTTtQTR4OQWNjZXB0TmVnYXRpdmULKYYBQWpheENvbnRyb2xUb29sa2l0Lk1hc2tlZEVkaXRTaG93U3ltYm9sLCBBamF4Q29udHJvbFRvb2xraXQsIFZlcnNpb249My4wLjIwMjI5LjIwODQzLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTI4ZjAxYjBlODRiNmQ1M2UAHgxEaXNwbGF5TW9uZXkLKwUAHhNPdmVycmlkZVBhZ2VDdWx0dXJlaB4WQ3VsdHVyZURhdGVQbGFjZWhvbGRlcgUBLx4RQ3VsdHVyZURhdGVGb3JtYXQFA0RNWWQCFw8PFgIfEmZkZAIbDxYaHxMFAS4fFAsrBAAfFQUFZW4tR0IfFgUCwqMfFwUBOh8YaB8ZBQEsHxoFBUFNO1BNHxsLKwUAHxwLKwUAHx1oHx4FAS8fHwUDRE1ZZAIdDxBkZBYBZmQCHw8WAh4Fc3R5bGUFDWRpc3BsYXk6bm9uZTtkAjMPFCsAAg8WBB4LXyFEYXRhQm91bmRnHgtfIUl0ZW1Db3VudAIIZGQWAmYPZBYQAgEPZBYWAgEPDxYEHg9Db21tYW5kQXJndW1lbnQFBTgxNDY0HgdFbmFibGVkaGRkAgMPDxYCHwoFCDIxVUNTMDk0ZGQCBQ8PFgIfCgUKMDctMTItMjAyM2RkAgcPDxYCHwoFCjMxLTEyLTIwMjNkZAIJDw8WAh8KBQRNRVNTZGQCCw8PFgIfCgUKMDIvMTIvMjAyM2RkAg0PDxYCHwoFCjExLzEyLzIwMjNkZAIPDw8WAh8KBQIyNWRkAhEPDxYCHwoFCEFQUFJPVkVEZGQCEw8PFgIfCgUBQWRkAhUPDxYCHyMFBTgxNDY0ZGQCAg9kFhYCAQ8PFgQfIwUFODA3ODcfJGhkZAIDDw8WAh8KBQgyMVVDUzA5NGRkAgUPDxYCHwoFCjAxLTAxLTIwMjRkZAIHDw8WAh8KBQowNy0wMS0yMDI0ZGQCCQ8PFgIfCgUETUVTU2RkAgsPDxYCHwoFCjAyLzEyLzIwMjNkZAINDw8WAh8KBQoxMS8xMi8yMDIzZGQCDw8PFgIfCgUBN2RkAhEPDxYCHwoFCEFQUFJPVkVEZGQCEw8PFgIfCgUBQWRkAhUPDxYCHyMFBTgwNzg3ZGQCAw9kFhYCAQ8PFgQfIwUFNjc0OTgfJGhkZAIDDw8WAh8KBQgyMVVDUzA5NGRkAgUPDxYCHwoFCjAxLTA2LTIwMjNkZAIHDw8WAh8KBQozMC0wNi0yMDIzZGQCCQ8PFgIfCgUETUVTU2RkAgsPDxYCHwoFCjA1LzA1LzIwMjNkZAINDw8WAh8KBQowNS8wNS8yMDIzZGQCDw8PFgIfCgUCMzBkZAIRDw8WAh8KBQhBUFBST1ZFRGRkAhMPDxYCHwoFAUFkZAIVDw8WAh8jBQU2NzQ5OGRkAgQPZBYWAgEPDxYEHyMFBTY3NDk3HyRoZGQCAw8PFgIfCgUIMjFVQ1MwOTRkZAIFDw8WAh8KBQowNi0wNS0yMDIzZGQCBw8PFgIfCgUKMzEtMDUtMjAyM2RkAgkPDxYCHwoFBE1FU1NkZAILDw8WAh8KBQowNS8wNS8yMDIzZGQCDQ8PFgIfCgUKMDUvMDUvMjAyM2RkAg8PDxYCHwoFAjI2ZGQCEQ8PFgIfCgUIQVBQUk9WRURkZAITDw8WAh8KBQFBZGQCFQ8PFgIfIwUFNjc0OTdkZAIFD2QWFgIBDw8WAh8jBQU1Mjg1M2RkAgMPDxYCHwoFCDIxVUNTMDk0ZGQCBQ8PFgIfCgUKMDctMTItMjAyMmRkAgcPDxYCHwoFCjA1LTAxLTIwMjNkZAIJDw8WAh8KBQZIT1NURUxkZAILDw8WAh8KBQowMi8xMi8yMDIyZGQCDQ8PFgIfCmVkZAIPDw8WAh8KBQEwZGQCEQ8PFgIfCgUURk9SV09SRUQgVE8gQVBQUk9WQUxkZAITDw8WAh8KBQFGZGQCFQ8PFgIfIwUFNTI4NTNkZAIGD2QWFgIBDw8WBB8jBQU1Mjg1Mh8kaGRkAgMPDxYCHwoFCDIxVUNTMDk0ZGQCBQ8PFgIfCgUKMDctMTItMjAyMmRkAgcPDxYCHwoFCjMxLTEyLTIwMjJkZAIJDw8WAh8KBQRNRVNTZGQCCw8PFgIfCgUKMDIvMTIvMjAyMmRkAg0PDxYCHwoFCjI2LzEyLzIwMjJkZAIPDw8WAh8KBQIyNWRkAhEPDxYCHwoFCEFQUFJPVkVEZGQCEw8PFgIfCgUBQWRkAhUPDxYCHyMFBTUyODUyZGQCBw9kFhYCAQ8PFgQfIwUFNDUzMTAfJGhkZAIDDw8WAh8KBQgyMVVDUzA5NGRkAgUPDxYCHwoFCjAxLTA3LTIwMjJkZAIHDw8WAh8KBQoxOC0wNy0yMDIyZGQCCQ8PFgIfCgUETUVTU2RkAgsPDxYCHwoFCjMwLzA1LzIwMjJkZAINDw8WAh8KBQozMC8wNS8yMDIyZGQCDw8PFgIfCgUBMGRkAhEPDxYCHwoFCFJFSkVDVEVEZGQCEw8PFgIfCgUBUmRkAhUPDxYCHyMFBTQ1MzEwZGQCCA9kFhYCAQ8PFgQfIwUFNDUzMDkfJGhkZAIDDw8WAh8KBQgyMVVDUzA5NGRkAgUPDxYCHwoFCjAxLTA2LTIwMjJkZAIHDw8WAh8KBQozMC0wNi0yMDIyZGQCCQ8PFgIfCgUETUVTU2RkAgsPDxYCHwoFCjMwLzA1LzIwMjJkZAINDw8WAh8KBQozMC8wNS8yMDIyZGQCDw8PFgIfCgUBMGRkAhEPDxYCHwoFCEFQUFJPVkVEZGQCEw8PFgIfCgUBQWRkAhUPDxYCHyMFBTQ1MzA5ZGQCAw8WAh8OaGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFhAFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmwwJGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDAkYnRuSW1hZ2UFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmwxJGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDEkYnRuSW1hZ2UFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmwyJGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDIkYnRuSW1hZ2UFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmwzJGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDMkYnRuSW1hZ2UFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmw0JGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDQkYnRuSW1hZ2UFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmw1JGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDUkYnRuSW1hZ2UFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmw2JGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDYkYnRuSW1hZ2UFM2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50JGN0cmw3JGJ0bkRlbGV0ZQUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRsdlN0dWRlbnQkY3RybDckYnRuSW1hZ2UFI2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbHZTdHVkZW50DxQrAA5kZGRkZGRkPCsACAACCGRkZGYC/////w9kaW7cTyOBj6g2wKyzFsSJKYqyEFd9jt+EkySJMgeZKAE=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['frmMaster'];
+if (!theForm) {
+    theForm = document.frmMaster;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=jfPtZl8bjybWOEN2at1VFS1w8VkxlAvNU7AQD8JjauIUB7dzq1bLkVrJkZlGHtsvFpZEaPS8pKHcq1bsHor1t7r6-5xW5ic_q0hS4MoxBOs1&amp;t=638344269720000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=is55ZsHoilWL744k7xSHHInnyRetAFu19Jc994C3Wmdbl03aQDjMrRbiaguo4YIxZms3ddf0cWYcyhMvg_IuBAtSAfRILd8GTC0c6aCLKXYtWMF25F6VrMBoi4Pix-BqpnvXImW8hzu3WhZtObBUsw2&amp;t=5452fe7b" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=4Wh9bihzZpLDyaq1DsaaHbfJeZ_5eqkh74afjAaJrUkDAINITyT0YvuvncFTTUXISPaQ-ZZ91hkp0UtP6f40N3PZGdphXuZwTCzdHXupmlLpTVX8mgmFOfX5bJbE3nvtnCauwlG_uC5LHzTQKFRMm2rWcoJ27WOLnluuQv8eoK41&amp;t=5452fe7b" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=PsAUK4tCbuSvgNL0wOju2ljP7VenkmIUG4H0LbbMI3rlxMCW6sXEactVYhkBE6BAH_kroZHCZ8VMXIrhHkvsEseLUH-EPjtVfs0IrMin-10uvBCBV55BgHgxl6fGG0zYv55RHIQIjCQHJh8p3dN6P14Lblmmjxgpd0DM4tW9m8iRiANtU3w_qTNdprxP8Vwe0&amp;t=20e3ff6b" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=l6rJ-ggnnZUgWCP-DBihm8eGoVga6IW0ePJ9kWjB2AW73c1hXOEwlWMHiv-hzEka8VFWMQkdKgGLdHMua23cqiNQUD3U8XeoU2sPiaNx_tGZGHCkOI1yNhBka4bUqKKpjRe6aKJ3zjV3BIHupbYv-I7352hLQipCH6dmv9rESgzKTNXCBOuy_X6Nh1Cdy6cq0&amp;t=20e3ff6b" type="text/javascript"></script>
+<script src="/HOSTEL/LeaveApplication.aspx?_TSM_HiddenField_=ToolkitScriptManager1_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.0.20229.20843%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a3b7d1b28-161f-426a-ab77-b345f2c428f5%3ae2e86ef9%3aa9a7729d%3a9ea3f0e2%3a9e8e87e9%3a1df13a87%3a4c9865be%3aba594826%3a507fcf1b%3ac7a4182e%3a182913ba%3abae32fb7%3a3858419b%3a96741c43%3ac4c00916%3ac7c04611%3acd120801%3a38ec41c0" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0018FC2C" />
+</div>
+        <div id="preloader">
+            <div id="loader-img">
+                <div id="loader">
+                </div>
+                <p class="saving">Loading<span>.</span><span>.</span><span>.</span></p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager1', 'frmMaster', ['tctl00$updPopUp_Link','updPopUp_Link','tctl00$UpdatePanel1','UpdatePanel1','tctl00$UpdatePanel2','UpdatePanel2','tctl00$ContentPlaceHolder1$updLeaveAppl','ContentPlaceHolder1_updLeaveAppl'], [], ['ctl00$ContentPlaceHolder1$btnSubmit','ContentPlaceHolder1_btnSubmit'], 90, 'ctl00');
+//]]>
+</script>
+
+            
+            <div class="container-fluid  bg-warning" style="background-color: #347fbe;">
+                <div class="col-md-1 col-sm-12">
+                    <p class="text-center">
+                        <img src="../IMAGES/logo.gif" id="Img3" width="60" />
+                    </p>
+                </div>
+                <div class="text-center" style="margin-top: 0px; margin-bottom: 0px; color: white;">
+                    <h2>National Institute of Technology Agartala</h2>
+                    Jirania, Tripura(W)-799046<br />
+                </div>
+            </div>
+            <hr style="margin: 0px; border-color: orange; border-width: 3px; width: inherit" />
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <a class="navbar-brand">
+                                <img id="Img1" />
+
+                            </a>
+
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            
+                            <div class="live-search-list">
+                                <div id="mainMenu">
+	<ul class="level1 nav navbar-nav">
+		<li><a class="popout level1" href="../#">
+                                        ONLINE PAYMENT
+                                    </a><ul class="level2 dropdown-menu">
+			<li><a class="popout level2" href="../#">
+                                        SBI E PAY
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../OPG/RequestPayment.aspx?pageno=1102">
+                                        Pay Tuition Fee
+                                    </a></li><li><a class="level3" href="../opg/CommonPayment.aspx?pageno=1179">
+                                        Common Payment Interface
+                                    </a></li>
+			</ul></li>
+		</ul></li><li><a class="popout level1" href="../#">
+                                        ACADEMIC
+                                    </a><ul class="level2 dropdown-menu">
+			<li><a class="popout level2" href="../#">
+                                        Transaction
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../ACADEMIC/BranchSlidingform.aspx?pageno=923">
+                                        Internal Sliding form
+                                    </a></li><li><a class="level3" href="../ACADEMIC/StudentBankDetails.aspx?pageno=1079">
+                                        Add Bank Details
+                                    </a></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        Reports
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../academic/reports/duplicate_admit_card.aspx?pageno=1188">
+                                        Duplicate Admit Card
+                                    </a></li><li><a class="level3" href="../academic/reports/paymentreceipt.aspx?pageno=1260">
+                                        Payment Receipt
+                                    </a></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        Admission
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../UpdateStudentInfo.aspx?pageno=650">
+                                        Update Information
+                                    </a></li><li><a class="level3" href="../ACADEMIC/Comprehensive_Stud_Report1.aspx?pageno=1091">
+                                        Attendance & CourseRegistration  Details
+                                    </a></li><li><a class="level3" href="../academic/upload_doc.aspx?pageno=1267">
+                                        Upload Document
+                                    </a></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        Registration
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../ACADEMIC/SemesterRegistration.aspx?pageno=762">
+                                        Semester Registration
+                                    </a></li><li><a class="level3" href="../Academic/SubjectRegistrationDetails.aspx?pageno=229">
+                                        Current Session Subject Registration Details
+                                    </a></li><li><a class="level3" href="../ACADEMIC/ExamRegistration.aspx?pageno=835">
+                                        Backlog Registration
+                                    </a></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        Examination
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../academic/examination/viewresult.aspx?pageno=819">
+                                        My Result
+                                    </a></li><li><a class="level3" href="../ACADEMIC/StudentAdmitCard.aspx?pageno=1045">
+                                        Print Admit Card
+                                    </a></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        No Dues
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../nodues/application.aspx?pageno=1217">
+                                        Application Request
+                                    </a></li><li><a class="level3" href="../nodues/viewdues.aspx?pageno=1218">
+                                        View Dues
+                                    </a></li>
+			</ul></li><li><a class="level2" href="../ACADEMIC/StudentFeedBackAns.aspx?pageno=768">
+                                        Student Feedback Answer
+                                    </a></li>
+		</ul></li><li><a class="popout level1" href="../#">
+                                        HOSTEL
+                                    </a><ul class="level2 dropdown-menu">
+			<li><a class="popout level2" href="../#">
+                                        Transaction
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="CancelRoomAllotment.aspx?Student=True&amp;pageno=214">
+                                        Cancel Room Allotment
+                                    </a></li><li><a class="level3" href="LeaveApplication.aspx?pageno=1067">
+                                        Leave Application
+                                    </a></li><li><a class="level3" href="StudAutoRoomAllotment.aspx?pageno=1289">
+                                        Automatic Room Allotment
+                                    </a></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        Reports
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="REPORT/MessBillBalance.aspx?pageno=1176">
+                                        Mess Bill Balance
+                                    </a></li>
+			</ul></li>
+		</ul></li><li><a class="popout level1" href="../#">
+                                        ITLE
+                                    </a><ul class="level2 dropdown-menu">
+			<li><a class="popout level2" href="../#">
+                                        Transactions
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../Itle/selectCourse.aspx?pageno=188">
+                                        Select Course
+                                    </a></li><li><a class="level3" href="../Itle/MailPage.aspx?pageno=254">
+                                        Message
+                                    </a></li><li><a class="level3" href="../Itle/Itle_NewDiscussionForum.aspx?pageno=281">
+                                        New Discussion Forum
+                                    </a></li><li><a class="level3" href="../Itle/StudForum.aspx?pageno=868">
+                                        Discussion Forum
+                                    </a></li><li><a class="level3" href="../Itle/Personal_Calendar.aspx?pageno=1154">
+                                        Personal Calendar
+                                    </a></li><li><a class="level3" href="../Itle/Itle_FrequentlyAskedQuestions_Master.aspx?pageno=1159">
+                                        Send Question To Faculty
+                                    </a></li><li><a class="level3" href="../ITLE/Itle_Request_Allowing_Retest.aspx?pageno=1161">
+                                        Request For ReTest
+                                    </a></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        View
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../Itle/StudLibrary.aspx?pageno=253">
+                                        Access e-Library
+                                    </a></li><li><a class="level3" href="../Itle/StudTest.aspx?pageno=873">
+                                        View Student Test
+                                    </a></li><li><a class="level3" href="../ITLE/StudAssignment.aspx?pageno=247">
+                                        Student Assignment
+                                    </a></li><li><a class="level3" href="../ITLE/StudAnnouncement.aspx?pageno=251">
+                                        Student Announcement
+                                    </a></li><li><a class="level3" href="../Itle/StudViewSyllabus.aspx?pageno=263">
+                                        View Syllabus
+                                    </a></li><li><a class="level3" href="../Itle/StudNotes.aspx?pageno=870">
+                                        View Lecture Notes
+                                    </a></li><li><a class="level3" href="../Itle/StudViewTPlan.aspx?pageno=259">
+                                        View Teaching Plan
+                                    </a></li><li><a class="level3" href="../Itle/Itle_Announcement_NoticeBoard.aspx?pageno=1163">
+                                        Virtual Notice Board
+                                    </a></li>
+			</ul></li>
+		</ul></li><li><a class="popout level1" href="../#">
+                                        T&P
+                                    </a><ul class="level2 dropdown-menu">
+			<li><a class="popout level2" href="../#">
+                                        Transactions
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="level3" href="../TRAININGANDPLACEMENT/Transactions/InPlantTrainingReg2.aspx?pageno=761">
+                                        InPlant Training Proposal
+                                    </a></li>
+			</ul></li>
+		</ul></li><li><a class="popout level1" href="../#">
+                                        ADMINISTRATIVE
+                                    </a><ul class="level2 dropdown-menu">
+			<li><a class="popout level2" href="../#">
+                                        Stipend
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="popout level3" href="../#nolink" target="frame1">
+                                        Transactions
+                                    </a><ul class="level4 dropdown-menu">
+					<li><a class="level4" href="../STIPEND/ApplyStipend.aspx?pageno=802">
+                                        Apply Stipend
+                                    </a></li>
+				</ul></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        Complaint and Grievance-Redressal
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="popout level3" href="../#nolink" target="frame1">
+                                        Transaction
+                                    </a><ul class="level4 dropdown-menu">
+					<li><a class="level4" href="../Complaints/TRANSACTION/complaint.aspx?pageno=1053">
+                                        Complaint and Grievance-Redressal Registration
+                                    </a></li>
+				</ul></li>
+			</ul></li><li><a class="popout level2" href="../#nolink">
+                                        Health
+                                    </a><ul class="level3 dropdown-menu">
+				<li><a class="popout level3" href="../#nolink" target="frame1">
+                                        Reports
+                                    </a><ul class="level4 dropdown-menu">
+					<li><a class="level4" href="../Health/Report/EmpPrescriptionDetails.aspx?pageno=1123">
+                                        Emp / Student Prescription Details
+                                    </a></li>
+				</ul></li>
+			</ul></li>
+		</ul></li>
+	</ul>
+</div><a id="mainMenu_SkipLink"></a>
+                            </div>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                        <div class="navbar-custom-menu">
+                            <ul class="nav navbar-nav">
+                                <!-- Messages: style can be found in dropdown.less-->
+
+                                <!-- /.messages-menu -->
+
+                                <!-- Notifications Menu -->
+                                
+                                <li class="dropdown" id="lblNotificationBell">
+                                    <a href="#" class="dropdown-toggle notification" data-toggle="dropdown" title="Notification">
+                                        <i class="fa fa-bell notiList"></i><span id="spnCount" class="notify"></span>
+                                    </a>
+                                    <ul class="dropdown-menu ">
+                                        <li class="user-body">
+                                            <div class="notification-content" id="style-1">
+                                                <div class="notifi-timeline">
+                                                    <h3 class="notifi-heading">Notification <i class="fa fa-times" title="Close"></i></h3>
+
+
+                                                    <hr style="margin: 0;">
+
+                                                    <ul class="force-overflow" id="menu1">
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <!-- Tasks Menu -->
+                                <!-- Search Box -->
+                                <li>
+                                    <div class="search-box">
+                                        <div class="cross-btn">
+                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="search" class="live-search-box" placeholder="search" />
+                                        <div class="live-search-area scrollbar">
+                                            <div class="jj"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- User Account Menu -->
+                                <li class="dropdown user user-menu">
+                                    <!-- Menu Toggle Button -->
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <!-- The user image in the navbar-->
+                                        
+                                        <img id="imgDash" class="user-image" alt="User Image" src="../showimage.aspx?id=14324&amp;type=STUDENT" />
+                                        
+                                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                        <span class="hidden-xs"> <i class="fa fa-chevron-circle-down"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- The user image in the menu -->
+                                        <li class="user-header">
+                                            
+                                            <img id="imgPhoto" class="img-circle" alt="User Image" src="../showimage.aspx?id=14324&amp;type=STUDENT" />
+                                            
+                                            <p>
+                                                <span>
+                                                    <span id="lblLink" style="color:Black;font-family:Verdana;font-size:8pt;font-size: 17px !important; color: #66FFFF !important;">Welcome,<br />KAVI KHALIQUE</span>
+
+                                                </span>
+                                            </p>
+                                            
+
+                                        </li>
+                                        <!-- Menu Body -->
+                                        <li class="user-body">
+                                            <div class="row">
+
+                                                <div class="col-xs-12 text-center">
+                                                    <a href="../changePassword.aspx" id="A1" style="font-weight: bold !important" class="btn btn-default btn-flat">Change Password</a>
+                                                </div>
+                                                <br />
+                                                <br />
+                                                <div class="col-xs-12 text-center">
+                                                    <a id="btnuserprofile" class="a" href="javascript:__doPostBack(&#39;ctl00$btnuserprofile&#39;,&#39;&#39;)"><span style="font-weight : bold !important" class="btn btn-default btn-flat"> User Profile</span> </a>
+                                                </div>
+
+                                            </div>
+                                            <!-- /.row -->
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <li class="user-footer">
+                                            
+                                            
+                                            <p class="text-center">
+                                                
+                                                <input type="submit" name="ctl00$btnHome" value="Home" id="btnHome" class="btn btn-info btn-flat" style="font-family:Verdana;font-size:8pt;" />
+
+                                                <input type="submit" name="ctl00$btnLogout" value="Log Out" id="btnLogout" class="btn btn-warning btn-flat" style="font-family:Verdana;font-size:8pt;" />
+                                            </p>
+                                            
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-custom-menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+
+
+
+
+
+                
+            </header>
+            <!-- Fix Menu -->
+            <div class="swayam-div">
+                <a href="https://swayam.gov.in/" target="_blank">
+                    <img id="img" src="../IMAGES/swayam_logo.png" />
+                </a>
+            </div>
+            <div class="fix-menu">
+                <ul class="list-group">
+                    
+                    <li class="menu-tab list-group-item" title="To-do">
+                        <div id="one"></div>
+                        <div id="two"></div>
+                        <div id="three"></div>
+                    </li>
+                    
+                    <li class="list-group-item" title="Dashboard">
+                        <a id="LinkButton1" class="a" href="javascript:__doPostBack(&#39;ctl00$LinkButton1&#39;,&#39;&#39;)"><i class="fa fa-home"></i></a></li>
+                    <li class="list-group-item" title="Recent Links" data-toggle="modal" data-target="#myModalz"><i class="fa fa-link"></i></li>
+                    <li class="list-group-item" title="Favorite Links" id="Fav_Model"><i class="fa fa-star"></i></li>
+                    
+                    <li class="list-group-item" title="Announcements" data-toggle="modal" data-target="#ann_model" id="ANNOUNCE"><i class="fa fa-shopping-basket"></i></li>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <!-- X -->
+
+            <div class="menu-hide ">
+                <div class="todo__wrapper">
+                    <div class="todo__content">
+                        <h5>To-do
+                            <label id="lblCount">(0)</label></h5>
+                        <div class="newItem">
+                            <div class="newItem__input">
+                                <input type="text" name="add" id="txttodo" maxlength="100" placeholder="Add a to-do...">
+                                <a id="btnAdd"><i id="plus" class="fa fa-plus" title="Add To-do"></i></a>
+                            </div>
+
+                        </div>
+                        <div class="scrollbar" id="Div2">
+                            <ul class="todo__list" id="ULtodoList">
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal right fade" id="myModalz" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Recent Links</h4>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group">
+                                <li id="li1" class="list-group-item"><span><a href="https://mis.nita.ac.in/mis/UpdateStudentInfo.aspx?pageno=650" id="ql1"><i id="iql1">Update Information</i></a></span></li>
+                                <li id="li2" class="list-group-item"><span><a href="https://mis.nita.ac.in/mis/Hostel/CancelRoomAllotment.aspx?Student=True?pageno=214" id="ql2"><i id="iql2">Cancel Room Allotment</i></a></span></li>
+                                <li id="li3" class="list-group-item"><span><a href="https://mis.nita.ac.in/mis/ACADEMIC/Comprehensive_Stud_Report1.aspx?pageno=1091" id="ql3"><i id="iql3">Attendance &amp; CourseRegistration  Details</i></a></span></li>
+                                <li id="li4" class="list-group-item"><span><a href="https://mis.nita.ac.in/mis/nodues/viewdues.aspx?pageno=1218" id="ql4"><i id="iql4">View Dues</i></a></span></li>
+                                <li id="li5" class="list-group-item"><span><a href="https://mis.nita.ac.in/mis/Itle/selectCourse.aspx?pageno=188" id="ql5"><i id="iql5">Select Course</i></a></span></li>
+                                
+                                
+                                
+                                
+                                
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" class="btn btn-warning close-btn" data-dismiss="modal" style="font-size: small; font-weight: bold;">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Favorites -->
+            
+            <div class="modal right fade" id="myModal_1" role="dialog">
+                <div id="updPopUp_Link">
+	
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="pull-right flex">
+
+                                        
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="pull-left">
+                                        <h4 class="modal-title">Favorites</h4>
+                                    </div>
+                                </div>
+                                <div id="divFavorite" class="modal-body with-fav-sticker-links">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-warning close-btn" data-dismiss="modal" style="font-size: small; font-weight: bold;">Close</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+</div>
+            </div>
+            <!-- END -->
+
+            <!-- Main content -->
+            
+            <div class="modal right fade" id="ann_model" role="dialog">
+                <div id="UpdatePanel1">
+	
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #2dbf89;">
+                                    <div class="pull-right flex">
+                                        <span data-toggle="modal" data-target="#search-ann" title="Search" style="margin-right: 10px;">
+                                            <i class="fa fa-search"></i></span>
+                                        
+                                        <button type="button" class="close" data-dismiss="modal" title="close">
+                                            &times;</button>
+
+                                    </div>
+                                    <div class="pull-left">
+                                        <h4 class="modal-title" style="font-size: 20px">Announcements</h4>
+                                    </div>
+                                </div>
+                                <div id="divAnnounce" class="modal-body" style="background-color: #f7f7f7; max-height: 580px; padding: 10px;">
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    
+</div>
+            </div>
+
+            <div class="modal right fade" id="search-ann" role="dialog" style="margin-top: 57px;">
+                <div id="UpdatePanel2">
+	
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #fff; color: #000">
+                                    <div class="pull-right flex">
+                                        
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            &times;</button>
+                                    </div>
+                                    <div class="pull-left">
+                                        <h4 class="modal-title">Search</h4>
+                                    </div>
+                                </div>
+                                <div id="Div1" class="modal-body with-fav-sticker-links">
+
+                                    <textarea class="form-control" rows="3" placeholder="Search Here ..."></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+</div>
+            </div>
+            <div id="modal01" class="modal" onclick="this.style.display='none'">
+                <span class="close">&times;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <div class="modal-content111">
+                    <img id="img2" style="max-width: 100%" />
+                </div>
+
+
+            </div>
+            
+
+            
+            <div class='panel-wrap-modal'>
+                
+                <div class="panel-header-modal">
+                    <span class="close" title="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    <h3>Report Collection </h3>
+                </div>
+
+                <div class="col-sm-12 overflow-panel-body scrollbar" id="dvReport">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12  report-box" id="dvAcademic" style="display: none;">
+                            <ul class="list-item" id="ulAcademic">
+
+                                <li>ACADEMIC </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvExamination" style="display: none;">
+                            <ul class="list-item" id="ulExamination">
+
+                                <li>EXAMINATION </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvHostel" style="display: none;">
+                            <ul class="list-item" id="ulHostel">
+
+                                <li>HOSTEL </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvTnP" style="display: none;">
+                            <ul class="list-item" id="ulTnP">
+
+                                <li>T And P</li>
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvElearning" style="display: none;">
+                            <ul class="list-item" id="ulElearning">
+
+                                <li>E-LEARNING </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvPayroll" style="display: none;">
+                            <ul class="list-item" id="ulPayroll">
+
+                                <li>PAYROLL </li>
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvEstablishment" style="display: none;">
+                            <ul class="list-item" id="ulEstablishment">
+
+                                <li>ESTABLISHMENT </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvStores" style="display: none;">
+                            <ul class="list-item" id="ulStores">
+
+                                <li>STORES </li>
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvAdministration" style="display: none;">
+                            <ul class="list-item" id="ulAdministration">
+
+                                <li>ADMINISTRATION </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvFinance" style="display: none;">
+                            <ul class="list-item" id="ulFinance">
+
+                                <li>FINANCE </li>
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 report-box" id="dvLibrary" style="display: none;">
+                            <ul class="list-item" id="ulLibrary">
+
+                                <li>LIBRARY </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 report-box" id="Div4" style="display: none;">
+                            <ul class="list-item" id="ul2">
+
+                                <li></li>
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+
+        <div class="menu-hide ">
+            <div class="todo__wrapper">
+                <div class="todo__content">
+                    <h5>To-do
+                            <label id="Label2">(0)</label></h5>
+                    <div class="newItem">
+                        <div class="newItem__input">
+                            <input type="text" name="add" id="Text1" maxlength="100" placeholder="Add a to-do...">
+                            <a id="A2"><i id="I1" class="fa fa-plus" title="Add To-do"></i></a>
+                        </div>
+
+                    </div>
+                    <div class="scrollbar" id="Div3">
+                        <ul class="todo__list" id="UL1">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="content-wrapper">
+            <div class="container">
+                
+                <div class="breadcrumb-menu">
+                    <ul class="breadcrumb" style="padding-right: 0">
+                        <li>
+                            <a id="LinkButton2" class="a" href="javascript:__doPostBack(&#39;ctl00$LinkButton2&#39;,&#39;&#39;)"><i class="fa fa-home text-primary" style="font-size:15px"></i></a>
+                        </li>
+                    </ul>
+                    <span id="lblpath" style="color:Black;font-family:Verdana;font-size:8pt;"><STRONG><ul><li>HOSTEL</li><li>Transaction</li><li>Leave Application</li></ul></STRONG></span>
+                </div>
+                
+                <section class="content" style="margin-bottom: 50px; padding: 0;">
+                    <br />
+                    
+    
+    <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        //On Page Load
+        $(document).ready(function () {
+            $('#tblLeaveGrid').removeAttr('width').DataTable({
+                scrollY: "300px",
+                scrollX: true,
+                paging: false,
+                scrollCollapse: true
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        //On UpdatePanel Refresh
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        if (prm != null) {
+            prm.add_endRequest(function (sender, e) {
+                if (sender._postBackSettings.panelsToUpdate != null) {
+                    $('#tblLeaveGrid').removeAttr('width').DataTable({
+                        scrollY: "300px",
+                        scrollX: true,
+                        paging: false,
+                        scrollCollapse: true
+                    });
+                }
+            });
+        };
+    </script>
+
+    <script type="text/javascript">
+        RunThisAfterEachAsyncPostback();
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(RunThisAfterEachAsyncPostback);
+    </script>
+
+     <div style="z-index: 1;top: 380px; left: 630px;">
+        <div id="ContentPlaceHolder1_UpdateProgress" style="display:none;">
+	
+                <div style="width: 120px; padding-left: 5px">
+                    <i class="fa-li fa fa-spinner fa-spin" style="font-size:60px"></i>
+                </div>
+            
+</div>
+        </div>
+ 
+  <div id="ContentPlaceHolder1_updLeaveAppl">
+	
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-primary">
+         <div class="row1" style="height:35px">
+          <label>&nbsp;<span style="color: red;">*</span>LEAVE APPLICATION FOR HOSTEL/MESS</label>
+         </div>
+         <div style="color: Red; font-weight: bold">
+              &nbsp;&nbsp;&nbsp;Note : * Marked fields are mandatory
+         </div> 
+             
+          <div class="box-body">
+            <div id="ContentPlaceHolder1_pnlDetails" class="row">
+                
+                <div class="col-md-12" style="color: green; font-weight: bold; margin-top:-1px;">
+               * Multiple Documents related to your leave should be scanned into Single file if you are applying more than Define Month days leave!!
+              <div style="color: Red; font-weight: bold;"> 
+                   Instructions : If you leave from Hostel & those Days you are not present in Mess Then you have to Apply Both (Hostel & Mess) Compulsary Otherwise you can Apply Separately.!
+                 </div> 
+            
+            </div>  
+                <div class="col-md-5">
+                  <div class="col-md-12 panel panel-default">
+                             <div class="panel-body">
+                                     
+                                <ul class="list-group list-group-unbordered">
+                                        <li class="list-group-item list-group-item-action list-group-item-info">
+                                            <b>Name :</b><a class="pull-right">
+                                            <span id="ContentPlaceHolder1_lblName" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">KAVI KHALIQUE</span></a>
+                                            </li>
+                                          <li class="list-group-item list-group-item-action list-group-item-info" style="height:55px">
+                                            <b>Branch :</b><a class="pull-right">
+                                            <span id="ContentPlaceHolder1_lblBranch" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">COMPUTER SC & ENGINEERING</span></a>
+                                            </li>
+                                          <li class="list-group-item list-group-item-action list-group-item-info" style="display:none">
+                                            <b>Admission Batch :</b><a class="pull-right">
+                                            <span id="ContentPlaceHolder1_lblAdmissionBatch" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">2021-22</span></a>
+                                            </li>
+                                          <li class="list-group-item list-group-item-action list-group-item-info">
+                                            <b>Semester :</b><a class="pull-right">
+                                            <span id="ContentPlaceHolder1_lblSemester" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">VI</span></a>
+                                            </li>
+                                          <li class="list-group-item list-group-item-action list-group-item-info">
+                                            <b>Hostel Name :</b><a class="pull-right">
+                                             <span id="ContentPlaceHolder1_lblHostalName" title="7" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">R N TAGORE</span></a>
+                                            </li>
+                                          <li class="list-group-item list-group-item-action list-group-item-info">
+                                            <b>Block No :</b><a class="pull-right">
+                                            <span id="ContentPlaceHolder1_lblBlockNo" title="32" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">BLOCK-5</span></a>
+                                            </li>
+                                          <li class="list-group-item list-group-item-action list-group-item-info">
+                                            <b>Room No :</b><a class="pull-right">
+                                            <span id="ContentPlaceHolder1_lblRoomNo" title="2628" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">R-228</span> </a>
+                                            </li>
+                                          <li class="list-group-item list-group-item-action list-group-item-info" style="height:55px">
+                                            <b>Mess Name :</b><a class="pull-right">
+                                            <span id="ContentPlaceHolder1_lblMessName" title="32" class="form-control" style="color:Black;font-family:Verdana;font-size:8pt;font-weight:bold;">M/S SUGANDHIM CATERERS(EASTERN MESS_RNTAGORE)</span> </a>
+                                            </li>
+                                          </ul>   
+                            </div>
+                              
+                          
+                          </div>
+                </div>               
+
+                <div class="col-md-7">
+                    <div class="col-md-12 panel panel-default">                              
+                       <div class="panel-body">
+                                      <div class="row">
+                                      <div class="form-group col-md-4 col-sm-4 col-xs-12">
+                                <label>  <span style="color : Red">*</span>   Leave From Date  <b> : </b>  </label>
+                                <div class="input-group" style="z-index:2;">
+                                     <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input name="ctl00$ContentPlaceHolder1$txtFromDate" type="text" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$txtFromDate\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="ContentPlaceHolder1_txtFromDate" tabindex="1" class="form-control" style="font-family:Verdana;font-size:9pt;" />
+                                    
+                                    
+                                    <input type="hidden" name="ctl00$ContentPlaceHolder1$meAllotmentDate_ClientState" id="ContentPlaceHolder1_meAllotmentDate_ClientState" />
+                                    
+                                </div>
+                            </div>
+                                      <div class="form-group col-md-5 col-sm-5 col-xs-12"> 
+                                 <label>  <span style="color : Red">*</span>   To Date  <b> : </b>  </label>
+                                <div class="input-group" style="z-index:1;">                                   
+                                     <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                      <input name="ctl00$ContentPlaceHolder1$txtToDate" type="text" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$txtToDate\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="ContentPlaceHolder1_txtToDate" disabled="disabled" tabindex="2" class="aspNetDisabled form-control" style="font-family:Verdana;font-size:9pt;" />
+                                     
+                                    
+                                <input type="hidden" name="ctl00$ContentPlaceHolder1$meToDate_ClientState" id="ContentPlaceHolder1_meToDate_ClientState" />
+                                
+                                </div>
+                            </div>
+                                      <div class="form-group col-md-3 col-sm-3 col-xs-12">
+                                     <label>  Leave From <b> : </b>  </label>
+                                 <table id="ContentPlaceHolder1_RdbStudentStatus">
+		<tr>
+			<td><input id="ContentPlaceHolder1_RdbStudentStatus_0" type="radio" name="ctl00$ContentPlaceHolder1$RdbStudentStatus" value="M" checked="checked" tabindex="1" /><label for="ContentPlaceHolder1_RdbStudentStatus_0">Mess  </label></td><td><input id="ContentPlaceHolder1_RdbStudentStatus_1" type="radio" name="ctl00$ContentPlaceHolder1$RdbStudentStatus" value="H" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$RdbStudentStatus$1\&#39;,\&#39;\&#39;)&#39;, 0)" tabindex="1" /><label for="ContentPlaceHolder1_RdbStudentStatus_1">Hostel</label></td>
+		</tr>
+	</table>
+                                  </div>
+
+                                   
+                                      <div id="ContentPlaceHolder1_Spn1" class="form-group col-md-12 col-sm-12 col-xs-12" style="display:none;">
+                                       <label>  <span style="color : Red">*</span>   Upload File  <b> : </b> </label>
+                                      <input type="file" name="ctl00$ContentPlaceHolder1$file1" id="ContentPlaceHolder1_file1" class="form-control" onchange="FileCheck(this);" />
+                                     </div>
+
+                                      
+
+                                      <div class="form-group col-md-9 col-sm-9 col-xs-12">
+                                   <label> <span style="color : Red">*</span>   Purpose  <b> : </b>  </label>
+                                  
+                                      <textarea name="ctl00$ContentPlaceHolder1$txtPurpose" rows="2" cols="20" id="ContentPlaceHolder1_txtPurpose" tabindex="3" class="form-control" style="font-family:Verdana;font-size:9pt;height:43px;">
+</textarea>
+                                      
+                                  
+                              </div>
+
+                                             <div class="form-group col-md-3 col-sm-3 col-xs-12">
+                                <label>   <span style="color : Red">*</span>  No of Days <b> : </b>  </label>
+                                      <input name="ctl00$ContentPlaceHolder1$txtTotDays" type="text" readonly="readonly" id="ContentPlaceHolder1_txtTotDays" class="form-control" style="font-family:Verdana;font-size:9pt;" />
+                                      <input type="hidden" name="ctl00$ContentPlaceHolder1$hdnDays" id="ContentPlaceHolder1_hdnDays" value="0" />
+                                 <span id="ContentPlaceHolder1_rfvTotDays" style="font-family:Verdana;font-size:8pt;display:none;"></span>  
+                                
+                              </div>
+                                  </div>
+                             </div>
+                       <div class="panel-footer text-center">
+                                    <input type="button" name="ctl00$ContentPlaceHolder1$btnSubmit" value="Submit" onclick="this.disabled=true;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnSubmit&quot;, &quot;&quot;, true, &quot;submit&quot;, &quot;&quot;, false, true))" id="ContentPlaceHolder1_btnSubmit" tabindex="4" class="btn btn-success" style="font-family:Verdana;font-size:8pt;font-weight:bold;" />
+                                       <input type="submit" name="ctl00$ContentPlaceHolder1$btnCancel" value="Cancel" id="ContentPlaceHolder1_btnCancel" tabindex="5" class="btn btn-warning" style="font-family:Verdana;font-size:8pt;font-weight:bold;" />
+                                    
+                                    
+                                   <div id="ContentPlaceHolder1_ValidationSummary1" style="font-family:Verdana;font-size:8pt;font-weight:normal;height:38px;display:none;">
+
+	</div>
+                              </div>
+                    </div>
+               
+                </div>
+                <div class="col-md-12">
+                          <fieldset> <legend>Student Leave List</legend></fieldset>
+                         
+                                          <table id="tblLeaveGrid" class="table table-hover table-bordered table-responsive" style="width:100%;margin-bottom:0">
+                                                    <thead>
+                                                        <tr class="bg-light-blue">
+                                                            <th>Cancel
+                                                            </th>
+                                                            <th>Reg. No.
+                                                            </th>
+                                                            
+                                                            <th>From Date
+                                                            </th>
+                                                             <th> To Date
+                                                            </th>
+                                                            <th> Leave Type
+                                                            </th>
+                                                            <th>Apply Date
+                                                            </th>
+                                                            <th>Approval Date
+                                                            </th>
+                                                            <th>Sanction Days
+                                                            </th>
+                                                            <th>Status
+                                                            </th>
+                                                            <th>
+                                                                Print
+                                                             </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        
+                                            
+                                        
+                                            
+                                        
+                                            <tr>
+
+                                              <td>
+                                                <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl2$btnDelete" id="ContentPlaceHolder1_lvStudent_btnDelete_2" disabled="disabled" tabindex="10" title="Delete Record" class="aspNetDisabled" src="../images/delete.jpg" alt="Delete Record" style="height:20px;width:20px;" />
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_lblregno_2" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">21UCS094</span>
+                                                </td>
+                                                
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label1_2" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">01-06-2023</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label2_2" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">30-06-2023</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                       <span id="ContentPlaceHolder1_lvStudent_Label3_2" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">MESS</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                      <span id="ContentPlaceHolder1_lvStudent_Label4_2" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">05/05/2023</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label5_2" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">05/05/2023</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label6_2" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">30</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label7_2" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">APPROVED</span>
+                                                                                                       
+                                                </td>
+                                                 <td>
+                                                  <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl2$btnImage" id="ContentPlaceHolder1_lvStudent_btnImage_2" title="Print" src="../IMAGES/print.gif" />
+
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+
+                                              <td>
+                                                <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl3$btnDelete" id="ContentPlaceHolder1_lvStudent_btnDelete_3" disabled="disabled" tabindex="10" title="Delete Record" class="aspNetDisabled" src="../images/delete.jpg" alt="Delete Record" style="height:20px;width:20px;" />
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_lblregno_3" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">21UCS094</span>
+                                                </td>
+                                                
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label1_3" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">06-05-2023</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label2_3" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">31-05-2023</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                       <span id="ContentPlaceHolder1_lvStudent_Label3_3" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">MESS</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                      <span id="ContentPlaceHolder1_lvStudent_Label4_3" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">05/05/2023</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label5_3" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">05/05/2023</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label6_3" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">26</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label7_3" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">APPROVED</span>
+                                                                                                       
+                                                </td>
+                                                 <td>
+                                                  <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl3$btnImage" id="ContentPlaceHolder1_lvStudent_btnImage_3" title="Print" src="../IMAGES/print.gif" />
+
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+
+                                              <td>
+                                                <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl4$btnDelete" id="ContentPlaceHolder1_lvStudent_btnDelete_4" tabindex="10" title="Delete Record" src="../images/delete.jpg" alt="Delete Record" onclick="showConfirmDel(this); return false;" style="height:20px;width:20px;" />
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_lblregno_4" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">21UCS094</span>
+                                                </td>
+                                                
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label1_4" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">07-12-2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label2_4" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">05-01-2023</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                       <span id="ContentPlaceHolder1_lvStudent_Label3_4" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">HOSTEL</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                      <span id="ContentPlaceHolder1_lvStudent_Label4_4" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">02/12/2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label5_4" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;"></span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label6_4" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">0</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label7_4" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">FORWORED TO APPROVAL</span>
+                                                                                                       
+                                                </td>
+                                                 <td>
+                                                  <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl4$btnImage" id="ContentPlaceHolder1_lvStudent_btnImage_4" title="Print" src="../IMAGES/print.gif" />
+
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+
+                                              <td>
+                                                <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl5$btnDelete" id="ContentPlaceHolder1_lvStudent_btnDelete_5" disabled="disabled" tabindex="10" title="Delete Record" class="aspNetDisabled" src="../images/delete.jpg" alt="Delete Record" style="height:20px;width:20px;" />
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_lblregno_5" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">21UCS094</span>
+                                                </td>
+                                                
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label1_5" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">07-12-2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label2_5" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">31-12-2022</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                       <span id="ContentPlaceHolder1_lvStudent_Label3_5" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">MESS</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                      <span id="ContentPlaceHolder1_lvStudent_Label4_5" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">02/12/2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label5_5" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">26/12/2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label6_5" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">25</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label7_5" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">APPROVED</span>
+                                                                                                       
+                                                </td>
+                                                 <td>
+                                                  <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl5$btnImage" id="ContentPlaceHolder1_lvStudent_btnImage_5" title="Print" src="../IMAGES/print.gif" />
+
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+
+                                              <td>
+                                                <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl6$btnDelete" id="ContentPlaceHolder1_lvStudent_btnDelete_6" disabled="disabled" tabindex="10" title="Delete Record" class="aspNetDisabled" src="../images/delete.jpg" alt="Delete Record" style="height:20px;width:20px;" />
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_lblregno_6" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">21UCS094</span>
+                                                </td>
+                                                
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label1_6" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">01-07-2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label2_6" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">18-07-2022</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                       <span id="ContentPlaceHolder1_lvStudent_Label3_6" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">MESS</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                      <span id="ContentPlaceHolder1_lvStudent_Label4_6" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">30/05/2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label5_6" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">30/05/2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label6_6" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">0</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label7_6" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">REJECTED</span>
+                                                                                                       
+                                                </td>
+                                                 <td>
+                                                  <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl6$btnImage" id="ContentPlaceHolder1_lvStudent_btnImage_6" title="Print" src="../IMAGES/print.gif" />
+
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+
+                                              <td>
+                                                <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl7$btnDelete" id="ContentPlaceHolder1_lvStudent_btnDelete_7" disabled="disabled" tabindex="10" title="Delete Record" class="aspNetDisabled" src="../images/delete.jpg" alt="Delete Record" style="height:20px;width:20px;" />
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_lblregno_7" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">21UCS094</span>
+                                                </td>
+                                                
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label1_7" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">01-06-2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label2_7" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">30-06-2022</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                       <span id="ContentPlaceHolder1_lvStudent_Label3_7" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">MESS</span>
+                                                    
+                                                </td>
+                                                  <td>
+                                                      <span id="ContentPlaceHolder1_lvStudent_Label4_7" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">30/05/2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label5_7" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">30/05/2022</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label6_7" class="form-control" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">0</span>
+                                                    
+                                                </td>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lvStudent_Label7_7" style="display:inline-block;color:Black;font-family:Verdana;font-size:8pt;width:90px;">APPROVED</span>
+                                                                                                       
+                                                </td>
+                                                 <td>
+                                                  <input type="image" name="ctl00$ContentPlaceHolder1$lvStudent$ctrl7$btnImage" id="ContentPlaceHolder1_lvStudent_btnImage_7" title="Print" src="../IMAGES/print.gif" />
+
+                                                </td>
+                                            </tr>
+                                        
+                                                    </tbody>
+                                            </table>
+                                        
+                      </div>
+             </div>
+              
+                                                      
+              </div>
+                                        
+                     
+           </div>
+        </div>
+       </div>
+                             
+    
+</div>
+  
+             
+    
+    
+    <div id="ContentPlaceHolder1_div" class="modalPopup" style="display: none;">
+	
+        <div style="text-align:center;z-index:999;background-color:#e6e6e6;border-color:#333;border-radius:5px; box-shadow:1px 2px 3px rgba(0,0,0,.5); padding:20px">
+            <table width="100%">
+                <tr>
+                    <td align="center">
+                        <div>
+                            
+                            <h2>
+                                Confirmation</h2>
+                            <p>
+                                <img align="middle" src="../IMAGES/warning.gif" alt="" />
+                                Are you sure you want to Cancel This Leave?
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$btnOkDel" value="Yes" id="ContentPlaceHolder1_btnOkDel" class="close" style="font-family:Verdana;font-size:8pt;width:50px;" />
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$btnNoDel" value="No" id="ContentPlaceHolder1_btnNoDel" class="close" style="font-family:Verdana;font-size:8pt;width:50px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    
+</div>
+
+    <script type="text/javascript">
+        //  keeps track of the delete button for the row that is going to be removed
+        var _source;
+        // keep track of the popup div
+        var _popup;
+
+        function showConfirmDel(source) {
+            this._source = source;
+            this._popup = $find('mdlPopupDel');
+
+            //  find the confirm ModalPopup and show it    
+            this._popup.show();
+        }
+
+        function okDelClick() {
+            //  find the confirm ModalPopup and hide it    
+            this._popup.hide();
+            //  use the cached button as the postback source
+            __doPostBack(this._source.name, '');
+        }
+
+        function cancelDelClick() {
+            //  find the confirm ModalPopup and hide it 
+            this._popup.hide();
+            //  clear the event source
+            this._source = null;
+            this._popup = null;
+        }
+
+    </script>
+
+    <script type="text/javascript" language="javascript">
+
+        function FileCheck(file) {
+            debugger;
+
+            if (!CheckFile(file)) {
+                return false;
+            }
+        }
+            function CheckFile(file) {
+                var isValidFile = CheckExtensions(file);
+                if (isValidFile)
+                    isValidFile = CheckFileSize(file);
+                return isValidFile;
+            }
+
+            var validFilesTypes = ["pdf"];
+            function CheckExtensions(file) { 
+                var filePath = file.value;
+                var ext = filePath.substring(filePath.lastIndexOf('.') + 1).toLowerCase();
+                var isValidFile = false;
+
+                for (var i = 0; i < validFilesTypes.length; i++) {
+                    if (ext == validFilesTypes[i]) {
+                        isValidFile = true;
+                        break;
+                    }
+                }
+                if (!isValidFile) {
+                    //file.length = 0;
+                    file.value = null;
+                   // iziToast.error({ message: "Supported File Format : " + validFilesTypes.join(", ") });
+                    alert('Supported File Format : ' + validFilesTypes.join(", ") + ' Only.');
+                }
+                return isValidFile;
+            }
+
+            function CheckFileSize(file) { 
+                var fileSize = file.files[0].size;
+                var isValidFile = false;
+                if (fileSize !== 0 && fileSize <= 5242880) {
+                    isValidFile = true;
+                }
+                else {
+                    file.value = null;
+                    alert('Maximum File Size : 5 MB.');
+                }
+                return isValidFile;
+            }
+    	
+	function SelectAll(headchk)
+	{				    				
+		var frm = document.forms[0]
+		for (i=0; i < document.forms[0].elements.length; i++)  
+		{				
+			var e = frm.elements[i];
+			if (e.type == 'checkbox')
+			{
+			   if (headchk.checked == true)				  	    
+			       e.checked = true;			       	
+			   else
+			       e.checked = false;			       
+			}
+		}
+	}
+
+    </script>
+
+
+                    <a id="HyperLink1" style="color: White; text-decoration: none; padding-bottom: 4px;"></a>
+
+                </section>
+            </div>
+        </div>
+
+        <footer class="main-footer navbar-fixed-bottom" style="text-align: center">
+            <strong>Designed and Developed By:<a href="http://www.iitms.co.in" target="_blank"> MasterSoft</a> Copyright &copy; 2016.</strong> All rights
+        reserved.
+                <div class="arrow-right"></div>
+        </footer>
+
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ContentPlaceHolder1_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("ContentPlaceHolder1_rfvTotDays"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ContentPlaceHolder1_rfvTotDays = document.all ? document.all["ContentPlaceHolder1_rfvTotDays"] : document.getElementById("ContentPlaceHolder1_rfvTotDays");
+ContentPlaceHolder1_rfvTotDays.controltovalidate = "ContentPlaceHolder1_txtTotDays";
+ContentPlaceHolder1_rfvTotDays.errormessage = "Please Enter No. of Days.";
+ContentPlaceHolder1_rfvTotDays.display = "None";
+ContentPlaceHolder1_rfvTotDays.validationGroup = "submit";
+ContentPlaceHolder1_rfvTotDays.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ContentPlaceHolder1_rfvTotDays.initialvalue = "0";
+var ContentPlaceHolder1_ValidationSummary1 = document.all ? document.all["ContentPlaceHolder1_ValidationSummary1"] : document.getElementById("ContentPlaceHolder1_ValidationSummary1");
+ContentPlaceHolder1_ValidationSummary1.showmessagebox = "True";
+ContentPlaceHolder1_ValidationSummary1.showsummary = "False";
+ContentPlaceHolder1_ValidationSummary1.validationGroup = "submit";
+//]]>
+</script>
+
+<script type='text/javascript'>new Sys.WebForms.Menu({ element: 'mainMenu', disappearAfter: 500, orientation: 'horizontal', tabIndex: 0, disabled: false });</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ContentPlaceHolder1_ValidationSummary1');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"ContentPlaceHolder1_updLeaveAppl","displayAfter":0,"dynamicLayout":true}, null, null, $get("ContentPlaceHolder1_UpdateProgress"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.CalendarBehavior, {"button":$get("imgFromDate"),"format":"dd/MM/yyyy","id":"ContentPlaceHolder1_ceAllotmentDate"}, null, null, $get("ContentPlaceHolder1_txtFromDate"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.MaskedEditBehavior, {"ClientStateFieldID":"ContentPlaceHolder1_meAllotmentDate_ClientState","CultureAMPMPlaceholder":"AM;PM","CultureCurrencySymbolPlaceholder":"£","CultureDateFormat":"DMY","CultureDatePlaceholder":"/","CultureDecimalPlaceholder":".","CultureName":"en-GB","CultureThousandsPlaceholder":",","CultureTimePlaceholder":":","Mask":"99/99/9999","MaskType":1,"OnInvalidCssClass":"errordate","id":"ContentPlaceHolder1_meAllotmentDate"}, null, null, $get("ContentPlaceHolder1_txtFromDate"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.CalendarBehavior, {"button":$get("imgToDate"),"format":"dd/MM/yyyy","id":"ContentPlaceHolder1_ceToDate"}, null, null, $get("ContentPlaceHolder1_txtToDate"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.MaskedEditBehavior, {"ClientStateFieldID":"ContentPlaceHolder1_meToDate_ClientState","CultureAMPMPlaceholder":"AM;PM","CultureCurrencySymbolPlaceholder":"£","CultureDateFormat":"DMY","CultureDatePlaceholder":"/","CultureDecimalPlaceholder":".","CultureName":"en-GB","CultureThousandsPlaceholder":",","CultureTimePlaceholder":":","Mask":"99/99/9999","MaskType":1,"OnInvalidCssClass":"errordate","id":"ContentPlaceHolder1_meToDate"}, null, null, $get("ContentPlaceHolder1_txtToDate"));
+});
+
+document.getElementById('ContentPlaceHolder1_rfvTotDays').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_rfvTotDays'));
+}
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ContentPlaceHolder1_btnNoDel","OkControlID":"ContentPlaceHolder1_btnOkDel","OnCancelScript":"cancelDelClick();","OnOkScript":"okDelClick();","PopupControlID":"ContentPlaceHolder1_div","dynamicServicePath":"/HOSTEL/LeaveApplication.aspx","id":"mdlPopupDel"}, null, null, $get("ContentPlaceHolder1_div"));
+});
+//]]>
+</script>
+</form>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var SR = jQuery.noConflict();
+    </script>
+    
+    <script src="../scripts/jquery.signalR-1.0.0.js"></script>
+    <script src="../signalr/hubs"></script>
+    
+    <script type="text/javascript">
+        $(function () {
+            //  alert("1"); 
+            //$(".mainMenu ul").removeAttr("style");
+            //$(".mainMenu ul li").removeAttr("style");
+            $(".mainMenu li").addClass("dropdown");
+            // $("#ctl00_mainMenu .has-popup").each(function () {
+            $("#mainMenu .has-popup").on("mouseenter", function () {
+                //  alert("1");
+                // $(this).find(".level2").parent().addClass("active");
+                // $(this).find(".level2").show();
+                $(this).on("mouseleave", function () {
+                    // $(this).find(".level2").hide();
+                    // $(this).find(".level2").parent().removeClass("active");
+                });
+            });
+
+            $("#mainMenu .has-popup").on("mouseenter", function () {
+                //   alert("1");
+                var ww = $(window).width();
+                var $menuItem = $(this).find("ul");
+                var $firstLevel = $(this).closest("ul.dropdown-menu");
+                var mw = $menuItem.width() + $firstLevel.offset().left + $firstLevel.width();
+                var marginLeft = 0 - ($menuItem.width() + $firstLevel.width());
+                // alert(mw);
+                if (ww < mw) {
+                    // alert("1");
+                    $menuItem.css("margin-left", marginLeft);
+                }
+                // $menuItem.css("display", "block");
+                $(this).on("mouseleave", function () {
+                    // $(this).find(".level3").css("display", "none");
+                });
+            });
+
+        });
+        // });
+        $(function () {
+            $(".navbar-nav li a").on("click", function (e) {
+                // alert("a")
+                //var current = $(this).next();
+                //var grandparent = $(this).parent().parent();
+                //if ($(this).hasClass('popout'))
+                //    $(this).toggleClass('right-caret left-caret');
+                //grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
+                //grandparent.find(".dropdown-menu:visible").not(current).hide();
+                //current.toggle();
+                //e.stopPropagation();
+            });
+            //$(".dropdown-menu > li > a:not(.popout)").on("click", function () {
+            //    var root = $(this).closest('.dropdown');
+            //    root.find('.left-caret').toggleClass('right-caret left-caret');
+            //    root.find('.dropdown-menu:visible').hide();
+            //});
+        });
+    </script>
+    <script>
+        //Hamburger menu toggle
+        var ww = $(window).width();
+
+
+        if ($(window).width() < 768) {
+
+
+            $('.navbar-nav li a').click(function () {
+                var clicks = $(this).data('clicks');
+                $(this).closest("li").children("ul.prDrop").slideDown();
+
+                if (clicks) {
+                    $(this).closest("li").children("ul").addClass("prDrop");
+
+                    $(this).closest("li").children("ul.prDrop").slideDown();
+                } else {
+
+
+                    $(this).closest("li").children("ul.prDrop").slideUp();
+                }
+
+                $(this).data("clicks", !clicks);
+
+                // return false;
+            });
+
+
+        } else {
+
+        }
+
+        if (isTouch() == true) {
+            $('body').addClass('touch-device');
+        }
+        /*Script to detect device*/
+        function isTouch() {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var toggle = $(".navbar-toggle").is(":visible");
+        if (toggle) {
+            $("#navbar-collapse").collapse('hide');
+        }
+
+
+        // });
+    </script>
+    <script>
+
+        $('#example').dataTable({
+            "scrollY": "200px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+
+    </script>
+    
+    
+    <script type="text/javascript">
+
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+        }
+        document.body.onclick = disableclick()
+
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+    <script type="text/javascript" language="JavaScript">
+
+        function myJS(myVar) {
+            window.alert(myVar);
+        }
+    </script>
+    <script>
+
+        $('#example').dataTable({
+            "scrollY": "200px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            var script = document.createElement('script')
+            script.setAttribute("type", "text/javascript")
+            script.setAttribute("src", "bootstrap/js/custom.js")
+            document.getElementsByTagName("body")[0].appendChild(script);
+            $('nav ul.navbar-nav li').each(function () {
+                $(this).find('.popout').append('<span class="caret"></span>');
+                $(this).find('ul .popout span').addClass("arrow-right");
+                //  $(".sf-with-ul .caret").each(function () {
+                var $arrow = $(this).find('.popout span:nth-of-type(n+2)');
+                // $($arrow).removeClass("caret");
+                //$($arrow).addClass("caret-second");
+                $($arrow).hide();
+                //});
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(".sidebar-mini.sidebar-collapse .sidebar-menu > li > a > span:not(.pull-right)").click(function(){
+                     
+                $(".sidebar-mini.sidebar-collapse .sidebar-menu > li >a  > .treeview-menu").css("display","block !important"})
+        }
+            )}
+    </script>
+
+
+    
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('a:not(.popout).dynamic').parent('li').css({ 'display': 'flex' });
+            $('a:not(.popout).dynamic').parent('li').append('<i class="fa fa-star"></i>');
+            var UA_No = '25310';
+            //-------------------------------------------------------------------
+            $.ajax({
+                url: '/WEB_API/Add_Fav_Links.asmx/Get_Active_FavLink',
+                data: { UA_NO: UA_No },
+                type: 'POST',
+                dataType: 'text',
+                success: function (r) {
+                    var json = "{" + r.split("{")[1].split("}")[0] + "}";
+                    var obj = jQuery.parseJSON(json);
+                    var i, j;
+                    for (i = 0; i < obj.data.split(",").length; i++) {
+
+                        $('li.dynamic').find('.fa').each(function (z, objz) {
+                            var link = $(this).prev().attr('href');
+
+                            var LinkNo = link.match("pageno=(.*)&");
+                            if (LinkNo == null) {
+                                LinkNo = link.substring(link.lastIndexOf("=") + 1, link.length);
+                            }
+                            else {
+                                LinkNo = LinkNo[1];
+                            }
+
+                            if (obj.data.split(",")[i] == LinkNo) {
+                                $(this).addClass('active');
+                            }
+                        });
+                    }
+                },
+                error: function (e) {
+                    //alert('Something went Wrong !!!');
+                }
+            });
+            //----------------------------------------------------------------------
+
+            $('li.dynamic').find('.fa').click(function () {
+                         
+                $(this).toggleClass('active');
+                var link = $(this).prev().attr('href');
+
+                var LinkNo = link.match("pageno=(.*)&");
+                if (LinkNo == null) {
+                    LinkNo = link.substring(link.lastIndexOf("=") + 1, link.length);
+                }
+                else {
+                    LinkNo = LinkNo[1];
+                }
+                var col = $(this).css("color");
+                var color = '';
+                //Find Color of Active Element
+                hexc(col);
+                //Web Api 
+                if (color == '#e60000') {
+                    $.ajax({
+                        url: '/WEB_API/Add_Fav_Links.asmx/Add_FavLink',
+                        data: { UA_NO: UA_No, LINK_NO: LinkNo, OTYPE: 1 },
+                        type: 'POST',
+                        dataType: 'text',
+                        success: function (r) {
+                            var json = "{" + r.split("{")[1].split("}")[0] + "}";
+                            var obj = jQuery.parseJSON(json);
+                        },
+                        error: function (err) {
+                            //alert('Something went Wrong !!!');
+                        }
+                    });
+                }
+                else if (color == '#a6a6a6') {
+                    $.ajax({
+                        url: '/WEB_API/Add_Fav_Links.asmx/Add_FavLink',
+                                 data: { UA_NO: UA_No, LINK_NO: LinkNo, OTYPE: 2 },
+                                 type: 'POST',
+                                 dataType: 'text',
+                                 success: function (r) {
+                                     var json = "{" + r.split("{")[1].split("}")[0] + "}";
+                                     var obj = jQuery.parseJSON(json);
+                                 },
+                                 error: function (err) {
+                                     //alert('Something went Wrong !!!');
+                                 }
+                             });
+                             }
+                // RGB to HEX Converter
+                function hexc(colorval) {
+                    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+                    delete (parts[0]);
+                    for (var i = 1; i <= 3; ++i) {
+                        parts[i] = parseInt(parts[i]).toString(16);
+                        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+                    }
+                    color = '#' + parts.join('');
+                }
+                //end
+            });
+        });
+    </script>
+    
+
+    
+    <script>
+        $(document).ready(function () {
+            $("#Fav_Model").click(function () {
+
+                var UA_No = '25310';
+
+                $.ajax({
+                    url: '/WEB_API/Add_Fav_Links.asmx/Get_FavLink',
+                    data: { UA_NO: UA_No },
+                    type: 'POST',
+                    dataType: 'text',
+                    success: function (r) {
+                        if ($("#DynamicDiv").length != 0) {
+                            $("#DynamicDiv").remove();
+                        }
+
+                        var json = "{" + r.split("{")[1].split("}")[0] + "}";
+                        var obj = jQuery.parseJSON(json);
+                        var x = "<div id='DynamicDiv'>" + obj.data + "</div>";
+                        x = x.replace(/&lt;/g, "<");
+                        x = x.replace(/&gt;/g, ">");
+                        x = x.replace(/&amp;/g, "&")
+
+                        if (x == "<div id='DynamicDiv'><ul class='list-group live-search'></div>") {
+                            $('#divFavorite').html('<span><center><h3 style="font-family: ptsans, sans-serif;margin-top: 50%;color:#3498DB"><i class="fa fa-star-half-o" aria-hidden="true"></i><br>No Favorite Links Added !!</h1></center></span>');
+                        }
+                        else {
+                            $('#divFavorite').html(x);
+                        }
+                    },
+                    error: function (e) {
+                        alert('No Favorite Link Added !!!');
+                    }
+                });
+
+                $('#myModal_1').modal('toggle');
+            });
+        });
+    </script>
+    
+
+    
+    <script>
+        $(document).ready(function () {
+            $('.menu-tab').click(function () {
+                $('.menu-hide').toggleClass('show');
+                $('.menu-tab').toggleClass('active');
+            });
+            $('.item__trash-can').click(function () {
+                $(this).parent('.todo__item').css('display', 'none');
+            });
+
+        });
+    </script>
+    
+    
+    <script>
+        $('#click').click(function () {
+            $('.panel-wrap-modal').toggleClass('panel-wrapaaa');
+        });
+
+        $('.close').click(function () {
+            $('.panel-wrap-modal').addClass('panel-close');
+            $('.panel-wrap-modal').removeClass('panel-wrapaaa');
+        });
+
+    </script>
+    
+
+    
+    <script>
+
+        function DeleteFavLinks(ele) {
+                 
+            var UA_No = '25310';
+            var link = $(ele).prev().attr("href");
+
+            var LinkNo = link.match("pageno=(.*)&");
+            if (LinkNo == null) {
+                LinkNo = link.substring(link.lastIndexOf("=") + 1, link.length);
+            }
+            else {
+                LinkNo = LinkNo[1];
+            }
+            //Remove Star from Links
+            $('li.dynamic').find('.fa').each(function (z, objz) {
+                var link_d = $(this).prev().attr('href');
+
+                var LinkNo_d = link_d.match("pageno=(.*)&");
+                if (LinkNo_d == null) {
+                    LinkNo_d = link_d.substring(link_d.lastIndexOf("=") + 1, link_d.length);
+                }
+                else {
+                    LinkNo_d = LinkNo_d[1];
+                }
+                //Compairing Page No's
+                if (LinkNo_d == LinkNo) {
+                    $(this).removeClass('active');
+                }
+            });
+            //End
+
+            //Delete Links
+            $.ajax({
+                url: '/WEB_API/Add_Fav_Links.asmx/Add_FavLink',
+                data: { UA_NO: UA_No, LINK_NO: LinkNo, OTYPE: 2 },
+                type: 'POST',
+                dataType: 'text',
+                success: function (r) {
+                    var json = "{" + r.split("{")[1].split("}")[0] + "}";
+                    var obj = jQuery.parseJSON(json);
+                },
+                error: function (err) {
+                    //alert('Something went Wrong !!!');
+                }
+            });
+            //End
+
+            //Get Links
+            var UL_Length = $(ele).closest('ul').children().length;
+            if (UL_Length == 1) {
+                $(ele).closest('ul').prev().closest('li').remove();
+                $(ele).closest('ul').prev().remove();
+                if ($('#DynamicDiv ul').length == 1) {
+                    $('#divFavorite').html('<span><center><h3 style="font-family: ptsans, sans-serif;margin-top: 50%;color:#3498DB"><i class="fa fa-star-half-o" aria-hidden="true"></i><br>No Favorite Links Added !!</h1></center></span>');
+                }
+            }
+            else {
+                $(ele).parent().remove();
+            }
+            //End
+        }
+    </script>
+    
+    
+    <script>
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#ANNOUNCE").click(function () {
+
+                var UA_No = '2';
+                var User = '25310';
+
+                $.ajax({
+                    url: '/WEB_API/Feedback.asmx/Get_FeedBackink',
+                    data: { UA_NO: UA_No, USER: User },
+                    type: 'POST',
+                    dataType: 'text',
+                    success: function (r) {
+
+                        var json = "{" + r.split("{")[1].split("}")[0] + "}";
+                        var obj = jQuery.parseJSON(json);
+                        var x = "" + obj.data + "";
+                        x = x.replace(/&lt;/g, "<");
+                        x = x.replace(/&gt;/g, ">");
+                        x = x.replace(/&amp;/g, "&")
+                        if (x == "") {
+                           
+                            $('#divAnnounce').html('<span><center><h3 style="font-family: ptsans, sans-serif;margin-top: 50%;color:#3498DB"><i class="fa fa-star-half-o" aria-hidden="true"></i><br>No Announcement Found !!</h1></center></span>');
+                        }
+                        else {
+                           
+                            $('#divAnnounce').html(x);
+                            
+                            $('.emojis').find(".emojiContainer").addClass('grayscale');
+                           
+                            $('.emojis').on('click', '.emojiContainer', function () {
+                                $(this).addClass('active').siblings().removeClass('active');
+                                $(this).parent().siblings('.feedback-box').children().show();
+
+                                $(this).parents('.feature').siblings('.feature').each(function () {
+                                    $(this).find('.feedback-text').hide();
+                                });
+                            });
+                            var UA_No = '25310';
+                                //-------------------------------------------------------------------
+
+                                $('.emojis').find(".emojiContainer").click(function () {
+                                    debugger;
+
+                                    var link = $(this).attr("value").split(',')[0];
+                                    var fed = $(this).attr("value").split(',')[1];
+                                    var title = $(this).attr("title").split(',')[0];
+                                    var link_title = $(this).attr("title").split(',')[1];
+                                    //var fed = $(this).parent().find("input[type=hidden]").val();
+                                    //alert(title);
+                                    //alert(link_title);
+                                    //var link =   $(this).addClass('active').attr("title");
+                                    $.ajax({
+                                        url: '/WEB_API/Feedback.asmx/Feed_back',
+                                    data: { UA_NO: UA_No, LINK_NO: link, FEEDID: fed },
+                                    type: 'POST',
+                                    dataType: 'text',
+                                    success: function (r) {
+                                        var json = "{" + r.split("{")[1].split("}")[0] + "}";
+                                        var obj = jQuery.parseJSON(json);
+                                        alert("Thank You For FeedBack !!!..");
+                                    },
+                                    error: function (err) {
+                                        //alert('Something went Wrong !!!');
+                                    }
+                                });
+                            });
+                        }
+                        },
+                    error: function (e) {
+                        alert('No New Announcement Added for you !!!');
+                    }
+                });
+
+                $('#ann_model');
+            });
+        });
+    </script>
+    
+    
+    <script>
+        $('#button-top').click(function () {
+            $('.live-search-area').hide();
+            $("#style-2").animate({ scrollTop: '0px' });
+
+        });
+        $('#user-icon').click(function () {
+            $('.live-search-area').hide();
+        });
+        $('i.notiList').click(function () {      //notification
+            $('.live-search-area').hide();
+            $("#menu1").animate({ scrollTop: '0px' });
+        });
+    </script>
+    <!-- DataTables -->
+
+    <script type="text/javascript">
+        SR(document).ready(function () {
+
+            updateNotificationCount();
+
+            var notificationHub = SR.connection.notificationHub;
+            SR.connection.hub.start().done(function () {
+                console.log('Notification hub started');
+
+            });
+            //signalr method for push server message to client
+            notificationHub.client.notify = function (message) {
+                if (message && message.toLowerCase() == "added") {
+                    updateNotificationCount();
+                }
+            }
+
+        });
+
+        function updateNotificationCount() {
+            //SR('#spnCount').removeClass('notify');
+            var count = 0;
+            SR.ajax({
+                type: "POST",
+                //url: "Notification.aspx/GetNotificationCount",
+                url: '/Notification.aspx/GetNotificationCount',
+                contentType: "application/json; charset=utf-8",
+                //dataType: "json",
+                success: function (response) {
+
+                    count = response['d'];
+                    if (count == 0) {
+                        //SR('#spnCount').removeClass('.notify');
+                        SR('#spnCount').hide();
+
+                    } else {
+
+                        SR('#spnCount').show();
+                        // SR('#spnCount').addClass('.notify');
+                        SR('#spnCount').html(count);
+
+
+                    }
+
+                },
+                failure: function (response) {
+                    alert(response.d);
+                }
+            });
+
+            GetNotificationList();
+        }
+
+
+        function GetNotificationList() {
+            var count = 0;
+            SR.ajax({
+                type: "POST",
+                //url: "Notification.aspx/GetNotification",
+                url: '/Notification.aspx/GetNotification',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    SR('#menu1').empty();
+                    if (response['d'].length == 0) {
+
+                        SR('#menu1').removeClass('scrollbar force-overflow');
+                        SR('#menu1').append(SR(' <li>No Activity Available.</li>'));
+                    } else {
+                        SR('#menu1').addClass('scrollbar force-overflow');
+                        SR.each(response['d'], function (index, value) {
+                            var html = urlify(value.Message)
+                            console.log("Message", html)
+                            // var date = cDate(value.AddedOn);
+
+                            //comment by panakj 7 jan for color change based  SR('#menu1').append(SR(' <li><h5><i class="fa fa-star"></i><b>' + value.MessageHeading + '</b></h5><p>' + value.Message + '</p><p class="date">Date:' + value.Date + '</p></li>'));
+                            if (value.IsRead == true) {
+                                //SR('#menu1').append(SR(' <li style="background-color:#ffff;border:1px solid #eee;" class="XX"><h6><i class="fa fa-star"></i><b>' + value.MessageHeading + '</b></h6><h6 style="display:flex;#4da3e1;margin:0;"><p style="padding-bottom:0;" >Star Date:' + value.Date + '</p><p style="padding-left:86px;padding-bottom:0;">End Date:' + value.Date + '</p></h6><p style="font-size:11px;"  onclick="newDoc(' + value.ActivityNo + ')" >' + value.Message + '</p><p class="date">Post Date:' + value.Date + '</p></li>'));
+                                //SR('#menu1').append(SR(' <li style="background-color:#ffff;border:1px solid #eee;" class="XX"><h6><i class="fa fa-star"></i><b>' + value.MessageHeading + '</b></h6><p style="font-size:11px;"  onclick="newDoc(' + value.ActivityNo + ')" >' + value.Message + '</p><p class="date">Post Date:' + value.Date + '</p></li>')); 
+                                SR('#menu1').append(SR(' <li style="background-color:#ffff;border-bottom:1px solid #ccc;" class="XX"><h6><i class="fa fa-star"></i><b style="font-size:13px">' + value.MessageHeading + '</b></h6><p style="font-size:12px; onclick="newDoc()">' + html + '</p><br><p class="date pull-right">Post Date:<span class="label label-default" style="background-color:#eee;font-size:12px;">' + value.Date + '</span></p></li>'));
+                                //by pankaj 25 feb 2020 SR('#menu1').append(SR(' <li style="background-color:#ffff;border-bottom:1px solid #ccc;" class="XX"><h6><i class="fa fa-star"></i><b style="font-size:13px">' + value.MessageHeading + '</b></h6><p style="font-size:12px; onclick="newDoc(' + value.ActivityNo + ')">' + value.Message + '</p><br><p class="date pull-right">Post Date:<span class="label label-default" style="background-color:#eee;font-size:12px;">' + value.Date + '</span></p></li>'));
+                                //  SR('#menu1').append(SR('<li style="background-color:#ffff;border:1px solid #eee;" class="XX"><a><span  class="message" style="text-align:left;">' + value.TRAN_DETAILS + '</span><span class="hover-date"><span style="right: 6px;font-size: 8px;" class="time"> ' + date + '</span></span><a></li>')); for reff <u class="date pull-left" style="color:#3c8dbc;">From Date: ' + value.Date + '</u><u class="date pull-right" style="color:#3c8dbc;">To Date: ' + value.Date + '</u>
+                                //SR('#menu1').append(SR(' <li>'+window.location.assign('https://www.w3schools.com')+'</li>'));
+                            }
+                            else {
+                                SR('#menu1').append(SR(' <li onclick="return updateCount(' + value.ActivityNo + ')" style="background-color:#d7ecff;border-bottom:1px solid #ccc;" class=""><h6><i class="fa fa-star"></i><b style="font-size:13px">' + value.MessageHeading + '</b></h6><p style="font-size:12px; onclick="newDoc()">' + html + '</p><br><p class="date pull-right">Post Date:<span class="label label-default" style="background-color:#eee;font-size:12px;">' + value.Date + '</span></p></li>'));
+                                //by pankaj 25 feb 2020  SR('#menu1').append(SR(' <li onclick="return updateCount(' + value.ActivityNo + ')" style="background-color:#d7ecff;border-bottom:1px solid #ccc;" class=""><h6><i class="fa fa-star"></i><b>' + value.MessageHeading + '</b></h6><p style="font-size:12px; onclick="newDoc(' + value.ActivityNo + ')">' + value.Message + '</p><br><p class="date pull-right">Post Date:<span class="label label-default" style="background-color:#eee;font-size:12px;">' + value.Date + '</span></p></li>'));
+                                //<p class="date">Post Date: ' + value.Date + '</p></li>'));
+                                //  SR('#menu1').append(SR('<li onclick="return updateCount(' + value.TRANID + ')" style="background-color:#d7ecff;border:1px solid #eee;" class=""><a><span  class="message" style="text-align:left;">' + value.TRAN_DETAILS + '</span><span class="hover-date" ><span style="right: 6px;font-size: 8px;" class="time"> ' + date + '</span></span><a></li>'));
+                            }
+
+                        });
+
+
+                    }
+                },
+                failure: function (response) {
+                    alert(response.d);
+                }
+
+
+            });
+
+
+        }
+
+        function urlify(text) {
+            var urlRegex = /(https?:\/\/[^\s]+)/g;
+            return text.replace(urlRegex, function (url) {
+                return '<a href="' + url + '" target="_blank">' + url + '</a>';
+            })
+        }
+
+        //add by pankaj nakhale 2020
+        function newDocc(idd) {
+            var obj = {};
+            obj.ActivityNo = idd;
+            SR.ajax({
+                type: 'POST',
+                url: '/Notification.aspx/BindUrls',
+                    //url: "Notification.aspx/BindUrls",
+                    data: JSON.stringify(obj),
+
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log("RRRR", response['d'])
+
+                        window.open(response['d']);
+                    },
+                    failure: function (response) {
+                        alert(response.d);
+                    }
+                });
+            }
+
+            function updateCount(id) {
+                var obj = {};
+                obj.ActivityNo = id;
+
+
+                SR.ajax({
+                    type: 'POST',
+                    //url: 'Notification.aspx/UpdateNotificationCounts',
+                    url: '/Notification.aspx/UpdateNotificationCounts',
+                    data: JSON.stringify(obj),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+
+                        updateNotificationCount();
+                        GetNotificationList();
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
+                //count = parseInt(SR('span.count').html()) || 0;
+                //count++;
+                SR('span.count').hide();
+            }
+
+            SR(".notiList").click(function () {
+
+
+                //updateNotificationCount();
+                // updateCount();
+                GetNotificationList();
+
+
+            });
+    </script>
+    
+</body>
+</html>

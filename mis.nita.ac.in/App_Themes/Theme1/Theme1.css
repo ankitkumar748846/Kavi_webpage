@@ -1,0 +1,139 @@
+.body {
+    background-color: #DEEBF9;
+}
+
+#master_head {
+    height: 34px;
+    background-image: url('../../images/bg_head.jpg');
+    vertical-align: top;
+    text-align: center;
+}
+
+#master_container {
+    position: relative;
+    width: 100%;
+}
+
+/*#master_footer
+{
+	height: 25px;
+	background-image: url( '../images/bg_head.jpg' );
+	vertical-align: middle;
+	text-align: center;
+	margin-left:0px;
+	width:100%;
+}*/
+
+.master_left {
+    background: url(../../images/link_head.png) repeat-x left top;
+    height: 54px;
+    text-align: left;
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #FFFFFF;
+    /*overflow:auto;*/
+    /*scrollbar-arrow-color:blue;
+	scrollbar-face-color: #e7e7e7; 
+	scrollbar-3dlight-color: #a0a0a0; 
+	scrollbar-darkshadow-color:#888888;*/
+}
+
+#page_content {
+    margin-left: 200px;
+}
+
+.listview-container {
+    /*overflow: auto;*/
+    height: 400px;
+    width: 100;
+}
+
+.vista-grid {
+    background: #fff;
+    /*border:solid 2px #A7BAC5;*/
+    font-family: verdana;
+    font-size: 11px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.vista-grid .titlebar {
+    /*background:#8988a5 url(../../images/title-bg.png);*/
+    height: 38px;
+    line-height: 38px;
+    padding: 0px 5px;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    background-color: #006699;
+    vertical-align: middle;
+}
+
+.vista-grid .datatable {
+    width: 100%;
+}
+
+/* grid headers */
+
+.vista-grid .datatable .header TH {
+    /*background: #EEEEEE url(../../images/header-bg.png);*/
+    border-bottom: solid 1px #A7BAC5;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 6px;
+    color: #666666;
+    text-align: left;
+    vertical-align: middle;
+    background-color: #ECF9FF;
+    font-family: Verdana;
+}
+
+/* data items */
+
+.vista-grid .datatable .item TD,
+.vista-grid .datatable .altitem TD {
+    padding: 9px 0px 9px 6px;
+    border-bottom: solid 1px #eae9e1;
+    color: #222222;
+    text-align: left;
+}
+
+.vista-grid .datatable .altitem TD {
+    background-color: #FDFDF8;
+}
+
+/* pager */
+
+.vista-grid_datapager {
+    width: 80%;
+    height: 19px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+/* Title of the page */
+
+.vista_page_title_bar {
+    background-image: url('../../images/page_title_bar.jpg');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 30px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 10pt;
+    padding-left: 25px;
+}
+
+.grid_bg {
+    background-color: #DEEBF9;
+}
